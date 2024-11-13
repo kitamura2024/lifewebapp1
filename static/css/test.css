@@ -1,0 +1,61 @@
+body{
+    font-family: 'Meiryo','Hiragino Kaku Gothic Pro',serif;
+    font-size: 25px;
+    border-top: 10px solid #79a1b1;
+    background-color: antiquewhite;
+}
+a {
+    text-decoration: none;
+    color: #8459b4b5;
+}
+.w_inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+.ttl {
+    background: #033953;
+    color: rgb(155, 168, 168);
+    padding: 15px 20px 12px; /* 文字の周りに余白をつける */
+    border-radius: 5px; /* 文字背景の角を丸くする */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.quiz_form button {
+    background-color: beige;
+    color: black;
+    margin-bottom: 20px;
+}
+.quiz_form .q {
+    background-color: #fff;
+    color: #033953;
+    margin: 10px 5px 10px;
+}
+.resultText {
+    background-color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+}
+.result_m {
+    background-color: aquamarine;
+    color: #323117b5;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+
+.footer {
+    margin-top: 40px;
+}
+.page_link {
+    text-align: left;
+}
+.pp_link {
+    text-align: right;
+}
+.footer .copy {
+    text-align: center;
+    background: #79a1b1;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px;
+}

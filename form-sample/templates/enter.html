@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <h1>WTForm：入力</h1>
+{% endblock %}
+
+{% block content %}
+    <!-- ▼▼▼リスト 5-8追加部分▼▼▼ -->
+    <div style="color: red;">
+        {% if form.errors %}
+            <ul>
+            === エラーメッセージ ===
+            {% for k, v in form.errors.items() %}
+                <li>{{k}}:{{v}}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    <form method="POST" novalidate> <!-- novalidateを追加することで入力内容の検証を無効にして複数のエラーを表示 -->
+        {{ form.name.label }}{{ form.name(size=20) }}<br>
+        {{ form.age.label }}{{ form.age() }}<br>
+        {{ form.password.label }}{{ form.password(size=20) }}<br>
+        {{ form.confirm_password.label }}{{ form.confirm_password(size=20) }}<br>
+        {{ form.email.label }}{{ form.email(placeholder="xxxx@example.com") }}<br>
+        {{ form.birthday.label }}{{ form.birthday() }}<br>
+        {{ form.gender.label }}{{ form.gender() }}<br>
+        {{ form.area.label }}{{ form.area() }}<br>
+        {{ form.is_married.label }}{{ form.is_married() }}<br>
+        {{ form.note.label }}{{ form.note(style="height:100px; width:150px")}}<br>
+        {{ form.submit() }}
+    </form>
+{% endblock %}

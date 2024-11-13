@@ -1,0 +1,147 @@
+body{
+    font-family: 'Meiryo','Hiragino Kaku Gothic Pro',serif;
+    font-size: 25px;
+    border-top: 10px solid #79a1b1;
+}
+a {
+    text-decoration: none;
+    color: #8459b4b5;
+}
+.w_inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+.header {
+    width: 1200px;
+    margin: 0 auto;
+    background: #eeeeee;
+}
+.header .main {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.header ul {
+    display: flex;
+}
+.header ul li {
+    width: 200px;
+    min-width: 200px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.header ul li:first-child {
+    border-left: 1px solid #ddd;
+}
+.header ul li a {
+    display: block;
+}
+.header_img img {
+    height: auto;
+    width: 1200px;
+}
+.test_block {
+    display: flex;
+    justify-content: space-between;
+}
+.test {
+    text-align: center;
+}
+.test img {
+    width: 120px;
+    height: auto;
+}
+.test .ttl{
+    text-align: center;
+    font-weight: bold;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+.test .explain {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 500px;
+}
+.test a{
+    background: #79a1b1;
+    color: white;
+    padding: 15px 20px 12px; /* 文字の周りに余白をつける */
+    border-radius: 20px; /* 文字背景の角を丸くする */
+}
+
+.footer {
+    margin-top: 40px;
+}
+.page_link {
+    text-align: left;
+}
+.pp_link {
+    text-align: right;
+}
+.copy {
+    text-align: center;
+    background: #79a1b1;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px;
+}
+
+/* ブログ記事 */
+article {
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+article p {
+    margin-bottom: 20px;
+    text-indent: 1em;
+}
+h1 {
+    color: #333;
+}
+h2 {
+    color:#555;
+    margin-top: 30px;
+    font-size: 27px;
+    font-weight: bold;
+}
+h3 {
+    border-bottom: 2px solid #3498db; /* 下線 */
+    padding-bottom: 5px;
+    color: #2c3e50; /* テキストカラー */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* テキストシャドウ */
+    margin-bottom: 5px;
+}
+h4 {
+    background-color: #fffbf0; /* 背景色 */
+    padding: 10px; /* 内側の余白 */
+    color: #2c3e50; /* テキストカラー */
+    border-radius: 5px; /* 角丸にする */
+}
+.article_type {
+    font-size: 18px;
+    text-align: left;
+}
+.blog_img img {
+    max-width: 20%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+article ul {
+    background-color: antiquewhite;
+    width: auto;
+    height: auto;
+}
+/* article ul {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    z-index: 1;
+    height: auto;
+    width: 440px;
+    border-radius: 25px;
+    background: #4FDCE2;
+    content: "";
+} */

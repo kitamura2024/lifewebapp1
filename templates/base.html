@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <meta name="description" content=""><!-- nameが何か、contentはどのように表示するか -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <title>{% block title%}タイトル{% endblock %}</title>
+</head>
+<body>
+    <div class="header">
+        <div class="main">
+            {% block header %}ヘッダー{% endblock %}
+        </div>
+        <ul>
+            <li><a href="{{url_for('top')}}">Top画面</a></li>
+            <li><a href="{{url_for('index')}}">苦手診断</a></li>
+            <li><a href="{{url_for('nigate_a2')}}">物忘れ</a></li>
+            <li><a href="{{url_for('list')}}">遅刻</a></li>
+            <li><a href="{{url_for('list')}}">人間関係</a></li>
+            <li><a href="{{url_for('list')}}">メンタル</a></li>
+        </ul>    
+    </div>
+    <div class="container w_inner">
+            {% block content %}
+            内容
+            {% endblock %}
+    </div>
+    <div class="footer">
+        <div class="page_link w_inner">
+        {% block footer %}
+        他のページへのURLを表示
+        {% endblock %}
+        </div>
+        <div class="pp_link w_inner">
+            <a href="">個人情報保護方針</a>
+        </div>
+        <div class="copy">
+            &copy;2024 XXX
+        </div>
+        </div>
+    </div>
+</body>    
+</html>

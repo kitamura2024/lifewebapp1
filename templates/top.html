@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+<head>
+   
+    {% block title%}苦手・悩み克服教室{% endblock %}
+</head>
+<body>
+    {% block header %}大人の苦手・悩み克服教室{% endblock %}
+
+    {% block content %}
+    <div class="header_img">
+        <img src="{{url_for('static', filename='img/header_cat.png')}}" alt="ヘッダー画像">
+    </div>
+    <div class="test_block">
+        <div class="test">
+            <img src="{{url_for('static', filename='img/park_girl.png')}}" alt="画像が表示されません">
+            <div class="ttl">苦手・悩み克服診断【ひとり活動編】</div>
+            <div class="explain">ものわすれ、遅刻など、生活の中でのあなたの苦手や悩みを簡単に診断します。</div>
+            <a href="{{url_for('index')}}">診断画面へ</a>
+        </div>
+        <div class="test">
+            <img src="{{url_for('static', filename='img/with_kiwi.png')}}" alt="画像が表示されません">
+            <div class="ttl">苦手・悩み克服診断【コミュニケーション編】</div>
+            <div class="explain">人との関わりや集団の中での生活における苦手や悩みを簡単に診断します。</div>
+            <a href="{{url_for('index')}}">診断画面へ</a>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+{% block footer %}
+    <a href="{{url_for('index')}}">診断画面へ</a>
+    <a href="{{url_for('list')}}">商品一覧練習用ページ</a>
+{% endblock %}
