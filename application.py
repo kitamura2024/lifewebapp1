@@ -26,19 +26,3 @@ def nigate_a2():
 #run() メソッド
 if __name__ == '__main__':
     app.run(debug=True)
-
-#▼▼▼ここから【制御文】▼▼▼
-#商品クラス
-""" class Item:
-    def __init__(self, id, name) :
-        self.id = id
-        self.name = name
-    def __str__(self):
-        return f'商品ID : {self.id} 商品名 : {self.name}'
-
-#繰り返し
-@app.route("/for_list")
-def show_for_list():
-    item_list = [Item(1, "団子"), Item(2, "肉まん"), Item(3, "どら焼き")]
-    return render_template('for_list.html', items = item_list)
- """
