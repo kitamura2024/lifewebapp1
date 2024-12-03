@@ -71,7 +71,7 @@ a {
 }
 
 .footer {
-    margin-top: 40px;
+    margin-top: 80px;
 }
 .page_link {
     text-align: left;
@@ -99,6 +99,9 @@ article p {
 }
 h1 {
     color: #333;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 h2 {
     color:#555;
@@ -134,14 +137,143 @@ article ul {
     width: auto;
     height: auto;
 }
-/* article ul {
-    position: absolute;
-    top: 0px;
-    right: 5px;
-    z-index: 1;
-    height: auto;
-    width: 440px;
-    border-radius: 25px;
-    background: #4FDCE2;
-    content: "";
-} */
+/* 診断ページ*/
+.question-page {
+    background-color: antiquewhite;
+}
+
+/* 縦スクロール */
+.scrollable-form {
+    max-height: 350px;
+    max-width: 900px;
+    overflow-y: auto; 
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* 質問 */
+.question-block p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.answer-options label {
+    display: inline-block; /* ラベルとラジオボタンを整列 */
+    justify-content: center; /* 中央揃え */
+    padding: 10px 20px; /* 内側の余白 */
+    border: 2px solid #ccc; /* ボーダー追加 */
+    border-radius: 10px; /* 角を丸く */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* アニメーションの設定 */
+    cursor: pointer; /* 選択を可能にする */
+    background-color: #8da8b3; /* 初期背景色 */
+}
+/* フォーカスされた場合の効果 */
+.answer-options input[type="radio"]:hover + label{
+    transform: scale(1.04); /* わずかに拡大 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* より強調された影 */
+    background-color: #bbdefb; /* 強調された背景色 */
+}
+
+/* ラジオボタン自体のスタイルを非表示にする */
+.answer-options input[type="radio"] {
+    display: none;
+} 
+
+/* 選択時、label要素に適用*/
+.answer-options input[type="radio"]:checked + label{
+    transform: scale(1.07) ; /* 選択時に少し大きく */
+    background-color: #90caf9; /* 選択時の背景色 */
+    border-color: #42a5f5; /* 選択時のボーダー色 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* より強調された影 */
+}
+
+/* ボタン */
+button[type="submit"] {
+    background-color: #42a5f5;
+    color: #fff;
+    font-size: 25px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #1e88e5;
+    transform: scale(1.05);
+}
+
+/* 診断結果の表示部分 */
+.result_comment {
+    max-width: 800px; /* 適度な幅 */
+    margin: 50px;
+    padding: 20px;
+    background: #fff; /* 背景を白で強調 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* さりげない影 */
+    border-radius: 10px; /* 角を丸く */
+    border: 2px solid #4a4a8e;
+}
+.result_comment h2{
+    font-size: 1.3em; /* 強調する大きさ */
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4a4a8e; /* 線でアクセント */
+    padding-bottom: 5px;
+}
+.nigate h2 {
+    font-size: 1.8em; /* 強調する大きさ */
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    color: #4a4a8e; /* 上品なダークブルー */
+    border-bottom: 2px solid #4a4a8e; /* 線でアクセント */
+    padding-bottom: 5px;
+}
+.blog_page {
+    max-width: 800px; /* 適度な幅 */
+    margin: 50px; 
+    padding: 20px;
+    background: #fff; /* 背景を白で強調 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* さりげない影 */
+    border-radius: 10px; /* 角を丸く */
+}
+.blog_page ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2列に分割 */
+    gap: 20px; /* 隙間 */
+}
+.blog_page ul li{
+    margin: 10px 0;
+}
+.blog_page ul li a {
+    text-decoration: none; /* 下線を削除 */
+    color: #4a4a8e; /* リンクの色 */
+    font-size: 1.1em; /* 読みやすい大きさ */
+    font-weight: 500;
+    transition: all 0.3s ease-in-out; /* なめらかな変化 */
+}
+
+.blog_page ul li a:hover {
+    color: #ff6347; /* ホバー時におしゃれな赤に変化 */
+    text-decoration: underline; /* 下線を追加して視覚的な変化 */
+}
+
+/* リスト項目のスタイル */
+.blog_page ul li {
+    padding: 10px;
+    background: #f9f9ff; /* さりげない背景色 */
+    border: 1px solid #ddd; /* 薄いボーダー */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.blog_page ul li:hover {
+    background: #eaeaff; /* ホバー時の柔らかい色変更 */
+    transform: translateY(-3px); /* 少し浮き上がるような効果 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 影を追加 */
+}
+

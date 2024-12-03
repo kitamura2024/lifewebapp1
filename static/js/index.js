@@ -142,17 +142,18 @@ function displayResults(results) {
     const resultContainer = document.getElementById('results');
     
     resultContainer.innerHTML = `
-        <p>単純作業が苦手: ${results.simple}</p>
+        <p>単純作業が苦手（集中力がない）締め切りのある状況が苦手: ${results.simple}</p>
         <p>マルチタスクが苦手: ${results.multitask}</p>
         <p>コツコツ続けることが苦手（長続きしない）: ${results.steadily}</p>
         <p>聞いたことを忘れる: ${results.forgetWord}</p>
-        <p>やるべきことをよく忘れる: ${results.forgetAction}</p>
+        <p>やるべきことをよく忘れる、聞いたことを忘れる: ${results.forgetAction}</p>
         <p>不安になりやすい: ${results.anxiety}</p>
-        <p>締め切りのある状況が苦手: ${results.quick}</p>
+        <p>新しいことに取り組む、問題解決方法を自ら見つける、発想力（料理を考える）、収納や整理整頓: ${results.quick}</p>
         <p>時間の管理が苦手: ${results.time}</p>
-        <p>プランニング（行動の計画を立てること）: ${results.planning}</p>
+        <p>プランニング（行動の計画を立てること、優先順位）、片付けをやり始める、締め切り苦手: ${results.planning}</p>
         <p>物をよく忘れる: ${results.forgetItem}</p>
-        <p>集中が続かない: ${results.careless}</p>
+        <p>集中が続かない、単純作業が苦手: ${results.careless}</p>
+        
 
 
     `;

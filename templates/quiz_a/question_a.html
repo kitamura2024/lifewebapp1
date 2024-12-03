@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="question_page">
+    <h1>苦手・悩み克服診断【ひとり活動編】</h1>
+    <div class="scrollable-form">
+        <form method="POST">
+            {% for i, question in questions_with_index %}
+            <div class="question-block">
+                <p>質問{{ i+1 }}: {{ question.question }}</p>
+                <div class="answer-options">
+                    <input type="radio" id="q{{ i+1 }}_option1" name="q{{ i+1 }}" value="1" required><label for="q{{ i+1 }}_option1"> {{ question.options[0] }} </label>
+                    <input type="radio" id="q{{ i+1 }}_option2" name="q{{ i+1 }}" value="2"><label for="q{{ i+1 }}_option2"> {{ question.options[1] }} </label>
+                    <input type="radio" id="q{{ i+1 }}_option3" name="q{{ i+1 }}" value="3"><label for="q{{ i+1 }}_option3"> {{ question.options[2] }} </label>
+                    <input type="radio" id="q{{ i+1 }}_option4" name="q{{ i+1 }}" value="4"><label for="q{{ i+1 }}_option4"> {{ question.options[3] }} </label>
+                </div>
+            </div>
+            <hr>
+            {% endfor %}
+            <button type="submit" onclick="location.href='#result'">診断結果を表示</button>
+        </form>
+    </div>
+</div>
+
+{% if result %}
+<div id="result">
+    <div class="result_comment">
+        <h2>診断結果</h2>
+        <p>あなたの【・・ポイント】は【{{ simple }}】で、【・・ポイント】は【{{ time }}】です。</p>
+        <p>{{ result }}</p>
+    </div>
+</div>
+<div class="blog_page">
+    <div class="nigate">
+        <h2>苦手対策ページ一覧</h2>
+    </div>
+    <ul>
+        <li><a href="{{url_for('top')}}">Top画面</a></li>
+        <li><a href="{{url_for('index')}}">苦手診断</a></li>
+        <li><a href="{{url_for('nigate_a2')}}">物忘れ</a></li>
+        <li><a href="{{url_for('list')}}">遅刻</a></li>
+        <li><a href="{{url_for('list')}}">人間関係</a></li>
+        <li><a href="{{url_for('list')}}">メンタル</a></li>
+    </ul>    
+</div>
+{% endif %}
+{% endblock %}
+{% block footer %}
+    <a href="{{url_for('index')}}">診断画面へ</a>
+    <a href="{{url_for('list')}}">本サイトについて</a>
+{% endblock %}

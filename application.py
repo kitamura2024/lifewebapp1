@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from quiz_b.quiz_b import quiz_bp
+from quiz_a.quiz_a import quiz_bp_a
 
 app = Flask(__name__)
 
@@ -10,6 +12,10 @@ def top():
 @app.route('/shindan')#ルーティング
 def index():
     return render_template('index.html')
+
+app.register_blueprint(quiz_bp)#Blueprintを登録
+app.register_blueprint(quiz_bp_a)
+
 
 @app.route('/list')
 def list():
