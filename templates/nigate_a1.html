@@ -2,20 +2,24 @@
 
 <head>
     <meta charset="UTF-8">
-    {% block title%}苦手A-1{% endblock %}
+    {% block title%}大人の苦手対策教室{% endblock %}
 </head>
 <body>
-    {% block header %}物忘れ{% endblock %}
+    {% block header %}大人の苦手対策教室{% endblock %}
     {% block content %}
-    <table border="1">
-        <tr><td>商品ID:</td><td>{{show_id}}</td></tr>
-        <tr><td>名前</td><td>ポケモン{{show_id}}</td></tr>
-    </table>
+    <body>
+        <div class="test_block">
+            <div class="test">
+                <img src="{{url_for('static', filename='img/pc_cat.png')}}" alt="画像が表示されません">
+                <div class="ttl">準備中</div>
+                <p>記事制作中です。しばらくお待ちください。</p>
+            </div>
+        </div>
+    </body>
 
     {% endblock %}
 </body>
 
 {% block footer %}
-    {{ super() }}
+    <a href="{{url_for('top')}}">TOPへ</a>
 {% endblock %}
-

@@ -6,7 +6,7 @@
 </head>
 <body>
     {% block header %}
-    <h1>大人の苦手対策教室 ― 物忘れ ― </h1>
+    <h1>大人の苦手対策教室 ― 置き忘れ ― </h1>
     {% endblock %}
     {% block content %}
     <article>
@@ -78,6 +78,5 @@
 
 {% block footer %}
     <a href="{{url_for('top')}}">Top画面</a>
-    <a href="{{url_for('index')}}">苦手診断</a>
-    <a href="{{url_for('list')}}">listページ</a>
+    <a href="{{url_for('purpose')}}">このサイトについて</a>
 {% endblock %}

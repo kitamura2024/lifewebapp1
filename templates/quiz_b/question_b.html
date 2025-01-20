@@ -26,7 +26,6 @@
 <div id="result">
     <div class="result_comment">
         <h2>診断結果</h2>
-        <p>あなたの【・・ポイント】は【{{ simple }}】で、【・・ポイント】は【{{ time }}】です。</p>
         <p>{{ result }}</p>
     </div>
 </div>
@@ -36,16 +35,15 @@
     </div>
     <ul>
         <li><a href="{{url_for('top')}}">Top画面</a></li>
-        <li><a href="{{url_for('index')}}">苦手診断</a></li>
         <li><a href="{{url_for('nigate_a2')}}">物忘れ</a></li>
-        <li><a href="{{url_for('list')}}">遅刻</a></li>
-        <li><a href="{{url_for('list')}}">人間関係</a></li>
-        <li><a href="{{url_for('list')}}">メンタル</a></li>
+        <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
+        <li><a href="{{url_for('nigate_a1')}}">人間関係（準備中）</a></li>
+        <li><a href="{{url_for('nigate_a1')}}">メンタル（準備中）</a></li>
     </ul>    
 </div>
 {% endif %}
 {% endblock %}
 {% block footer %}
-    <a href="{{url_for('index')}}">診断画面へ</a>
-    <a href="{{url_for('list')}}">商品一覧練習用ページ</a>
+    <a href="{{url_for('top')}}">TOPへ</a>
+    <a href="{{url_for('purpose')}}">本サイトについて</a>
 {% endblock %}

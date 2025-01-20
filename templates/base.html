@@ -12,22 +12,24 @@
 </head>
 <body>
     <div class="header">
-        <div class="main">
-            {% block header %}大人の苦手対策教室{% endblock %}
-        </div>
-        <ul>
-            <li><a href="{{url_for('top')}}">Top画面</a></li>
-            <li><a href="{{url_for('index')}}">苦手診断</a></li>
-            <li><a href="{{url_for('nigate_a2')}}">物忘れ</a></li>
-            <li><a href="{{url_for('list')}}">遅刻</a></li>
-            <li><a href="{{url_for('list')}}">人間関係</a></li>
-            <li><a href="{{url_for('list')}}">メンタル</a></li>
-        </ul>    
+        <div class="header_contents w_inner">
+            <div class="main">
+                {% block header %}大人の苦手対策教室{% endblock %}
+            </div>
+            <ul>
+                <li><a href="{{url_for('top')}}">Top画面</a></li>
+                <li><a href="{{url_for('purpose')}}">サイトの説明</a></li>
+                <li><a href="{{url_for('nigate_a2')}}">物忘れ</a></li>
+                <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
+                <li><a href="{{url_for('nigate_a1')}}">人間関係（準備中）</a></li>
+                <li><a href="{{url_for('nigate_a1')}}">メンタル（準備中）</a></li>
+            </ul>   
+        </div> 
     </div>
     <div class="container w_inner">
-            {% block content %}
+        {% block content %}
             内容
-            {% endblock %}
+        {% endblock %}
     </div>
     <div class="footer">
         <div class="page_link w_inner">
@@ -39,7 +41,7 @@
             <a href="">個人情報保護方針</a>
         </div>
         <div class="copy">
-            &copy;2024 XXX
+            &copy;2024 KITAMURA TOMOKI
         </div>
         </div>
     </div>

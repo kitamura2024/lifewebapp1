@@ -1,13 +1,11 @@
 {% extends "base.html" %}
 
 <head>
-   
     {% block title%}大人の苦手対策教室{% endblock %}
 </head>
-<body>
-    {% block header %}大人の苦手対策教室{% endblock %}
 
-    {% block content %}
+{% block content %}
+<body>
     <div class="header_img">
         <img src="{{url_for('static', filename='img/header_cat.png')}}" alt="ヘッダー画像">
     </div>
@@ -25,10 +23,23 @@
             <a href="{{url_for('quiz_b.quiz')}}">診断画面へ</a>
         </div>
     </div>
-    {% endblock %}
+    <div class="new-releases">
+        <section id="topNewRelease">
+            <img src="{{url_for('static', filename='img/topNewReleases.png')}}" alt="画像が表示されません">
+        </section>
+        {% for release in new_releases %}
+        <div class="release-item">
+            <h2>{{ release.title }}</h2>
+            <p class="date">{{ release.date }}</p>
+            <p class="description">{{ release.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+   
 </body>
+{% endblock %}
 
 {% block footer %}
-    <a href="{{url_for('index')}}">診断画面へ</a>
-    <a href="{{url_for('list')}}">商品一覧練習用ページ</a>
+    <a href="{{url_for('purpose')}}">本サイトについて</a>
+    <a href="{{url_for('login_page')}}">管理者用ページ</a>
 {% endblock %}

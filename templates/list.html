@@ -2,21 +2,43 @@
 
 <head>
     <meta charset="UTF-8">
-    {% block title%}ポケットモンスタースカーレット最高{% endblock %}
+    {% block title%}苦手克服教室・目的{% endblock %}
 </head>
 <body>
-    {% block header %}ポケモン一覧表{% endblock %}
+    {% block header %}本サイトの目的{% endblock %}
     {% block content %}
-    <table border="1">
-        <thead>
-            <tr><th>商品ID</th><th>商品名</th></tr>
-        </thead>
-        <tbody>
-            <tr><td><a href="{{url_for('nigate_a1', id=1)}}">1</a></td><td>メタモン</td></tr>
-            <tr><td><a href="{{url_for('nigate_a1', id=2)}}">2</a></td><td>ジュカイン</td></tr>
-            <tr><td><a href="{{url_for('nigate_a1', id=3)}}">3</a></td><td>ナットレイ</td></tr>
-        </tbody>
-    </table>
+    <article>
+        <div class="purpose">
+            <h4>本サイトの作成の経緯</h4>
+            <p>近年、転職しやすい世の中になってきており、離職率も高くなっている。メディアでの広告でも転職サポート業者は多い。
+            しかし、転職の仕方によっては転職した先で同じ失敗を繰り返してしまう方や、自分の不得手なことで悩み続けている方もいらっしゃいます。
+            苦手なことに対して大人になってからでもまだ対策できることがある、試していない方法があるはずそれを伝えたくて
+            本サイトを作成することにしました。
+            <h4>本サイトの目的</h4>
+            <ul>
+                <li>・自分の「苦手」を客観的に理解する。</li>
+                <li>・「苦手」に対する工夫や対策を考える。</li>
+            </ul>
+            
+            <h4>本サイトに使用した画像について</h4>
+            <p>本サイトは以下のサイトから商用利用可能な画像を使用しております。</p>
+            <ul>
+                <li>・shigureni free illust（<a href="https://example.com" target="_blank">https://example.com</a>）</li>
+                <li>・いらすとん（<a href="https://www.irasuton.com/" target="_blank">https://www.irasuton.com/</a>）</li>
+            </ul>
+        </div>
+        <div class="author-box">
+            <img src="{{url_for('static', filename='img/kotatsu_ushi.jpg')}}" alt="自然の風景">
+            <div class="author-info">
+                <h2>Kitamura Tomoki</h2>
+                <p>このサイトの制作者です。臨床心理士、公認心理師です。</p>
+                <ul class="author-social">
+                    <li><a href="https://twitter.com/taro_yamada">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/taro_yamada">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </article>
     {% endblock %}
 </body>
 
