@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width", initial-scale="1.0">
-    <meta name="description" content=""><!-- nameが何か、contentはどのように表示するか -->
+    <meta name="description" content="">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     
@@ -12,17 +12,28 @@
 </head>
 <body>
     <div class="header">
-        <div class="header_contents w_inner">
-            <div class="main">
-                {% block header %}大人の苦手対策教室{% endblock %}
-            </div>
+        <div class="page_name">
+            {% block header %}
+            <a href="{{url_for('top')}}">大人の苦手対策教室</a>
+            {% endblock %}
+        </div>
+        <div class="header_contents">
             <ul>
-                <li><a href="{{url_for('top')}}">Top画面</a></li>
-                <li><a href="{{url_for('purpose')}}">サイトの説明</a></li>
-                <li><a href="{{url_for('nigate_a2')}}">物忘れ</a></li>
+                <li><a href="{{url_for('quiz_a.quiz')}}">苦手診断</a>
+                    <ul class="sub-menu">
+                        <li><a href="{{url_for('quiz_a.quiz')}}">仕事・作業編</a></li>
+                        <li><a href="{{url_for('quiz_b.quiz')}}">コミュニケーション編</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{url_for('nigate_a2')}}">物忘れ</a>
+                    <ul class="sub-menu">
+                        <li><a href="{{url_for('nigate_z1')}}">Top画面</a></li>
+                    </ul>   
+                </li>
                 <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
                 <li><a href="{{url_for('nigate_a1')}}">人間関係（準備中）</a></li>
                 <li><a href="{{url_for('nigate_a1')}}">メンタル（準備中）</a></li>
+                <li><a href="{{url_for('purpose')}}">サイトの説明</a></li>
             </ul>   
         </div> 
     </div>

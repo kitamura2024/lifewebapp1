@@ -1,5 +1,6 @@
 body{
-    font-family: 'Meiryo','Hiragino Kaku Gothic Pro',serif;
+    font-family: "font", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+    'Meiryo',serif;
     font-size: 25px;
     border-top: 10px solid #79a1b1;
 }
@@ -11,41 +12,111 @@ a {
     width: 1200px;
     margin: 0 auto;
 }
+
+/*ヘッダー*/
 .header {
     width: 100%;
     margin: 0 auto;
-    background: #eeeeee;
 }
-.header .main {
+.header .page_name {
+    width: 100%;
+    background-color: #79a1b1;
+}
+.header .page_name a { 
     font-family: "游ゴシック","メイリオ";
-    color: #4a4a8e;
+    color: #eeeeee;
     font-weight: 500;
     margin-top: 5px;
     margin-bottom: 10px;    
 }
+.header .header_contents {
+    display: flex;
+    justify-content: center;
+    background-color: #eeeeee;
+}
 .header ul {
     display: flex;
+    background-color: #eeeeee;
+    max-width: 1200px;
+    width: 100%;
 }
 .header ul li {
-    width: 10%;
+    flex: 1;
     min-width: 200px;
     text-align: center;
     border-right: 1px solid #ddd;
     margin-top: 10px;
     margin-bottom: 10px;
+    position: relative;/*sub-menu*/
 }
 .header ul li:first-child {
     border-left: 1px solid #ddd;
 }
 .header ul li a {
     display: block;
+    color: #3b3b3b;
+    font-weight: bold;
+    text-shadow: 
+    -1px -1px 0 white,  
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white; 
 }
+/*ホバー時、サブメニューを表示*/
+.header ul li .sub-menu{
+    display: none;
+}
+.header ul li:hover .sub-menu{
+    display: block;
+}
+
+/* Global Menu */
+ul > li > a{
+    padding: 15px 30px;
+    display: block;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+ul > li:hover > a{
+    background-color: #efefef;
+    color: #444;
+}
+/* Submenu */
+
+ul li ul{
+    position: absolute;
+    top: 55px;
+    left: 0;
+}
+ul li ul li{
+    display: block;
+}
+ul li ul li a{
+    background-color: #efefef;
+    color: #444;
+}
+ul li ul li a:hover{
+    background-color: #ddd;
+}
+.sub-menu li:nth-child(n+2) {
+    top: -20px;
+}
+
+.sample01 ul li ul{
+    display: none;
+}
+.sample01 ul li:hover ul{
+    display: flex;
+}
+ 
+/*ヘッダー画像*/
 .header_img img {
     height: auto;
     width: 1200px;
 }
-
-/*診断*/
+/*診断選択ブロック*/
 .test_block {
     display: flex;
     justify-content: space-between;
@@ -76,13 +147,22 @@ a {
     text-align: center;
     width: 500px;
 }
-.test a{
+.btn {
     background: #79a1b1;
     color: white;
     padding: 15px 20px 12px; /* 文字の周りに余白をつける */
-    border-radius: 20px; /* 文字背景の角を丸くする */
+    border: 2px solid #3b3b3b; /* `solid` を追加 */
+    border-radius: 20px; /* 角を丸くする */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s, transform 0.2s; /* なめらかに変化 */
 }
 
+.btn:hover {
+    box-shadow: 4px 4px 8px #3b3b3b; /* ホバー時に影をつける */
+    transform: scale(1.05); /* 少し拡大して目立たせる */
+}
+
+/*フッター*/
 .footer {
     margin-top: 80px;
 }
@@ -175,25 +255,25 @@ h2 {
     font-weight: bold;
 }
 h3 {
-    border-bottom: 2px solid #3498db; /* 下線 */
+    border-bottom: 2px solid #3498db; 
     padding-bottom: 5px;
-    color: #2c3e50; /* テキストカラー */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* テキストシャドウ */
+    color: #2c3e50; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
     margin-bottom: 5px;
 }
 h4 {
-    background-color: #fffbf0; /* 背景色 */
-    padding: 10px; /* 内側の余白 */
-    color: #2c3e50; /* テキストカラー */
-    border-radius: 5px; /* 角丸にする */
+    background-color: #fffbf0; 
+    padding: 10px; 
+    color: #2c3e50; 
+    border-radius: 5px; 
 }
 .article_type {
     font-size: 18px;
     text-align: left;
 }
 .blog_img img {
-    max-width: 20%;
-    height: auto;
+    width: 1200px;
+    height: 300px;
     display: block;
     margin: 20px auto;
 }
@@ -203,11 +283,25 @@ article ul {
     height: auto;
 }
 /* 診断ページ*/
+.explanation {
+    max-width: 1200px; 
+    margin: 20px;
+    padding: 20px;
+    background: #f9f9f9; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+    border: 2px solid #ddd;
+}
+.explanation p{
+    font-size: 25px; 
+    margin-top: 25px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
 /* 縦スクロール */
 .scrollable-form {
-    max-height: 500px;
-    max-width: 900px;
-    overflow-y: auto; 
+    max-height: auto;
+    max-width: 1200px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -236,7 +330,7 @@ article ul {
     border-radius: 10px; /* 角を丸く */
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* アニメーションの設定 */
     cursor: pointer; /* 選択を可能にする */
-    background-color: #8da8b3; /* 初期背景色 */
+    background-color: #ffffff; /* ボタンの初期背景色 */
 }
 /* フォーカスされた場合の効果 */
 .answer-options input[type="radio"]:hover + label{
@@ -277,21 +371,29 @@ button[type="submit"]:hover {
 
 /* 診断結果の表示部分 */
 .result_comment {
-    max-width: 800px; /* 適度な幅 */
+    max-width: 800px; 
     margin: 50px;
     padding: 20px;
-    background: #fff; /* 背景を白で強調 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* さりげない影 */
-    border-radius: 10px; /* 角を丸く */
+    background: #fff; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
     border: 2px solid #4a4a8e;
 }
 .result_comment h2{
-    font-size: 1.3em; /* 強調する大きさ */
+    font-size: 1.3em; 
     font-weight: 600;
     margin-top: 25px;
     margin-bottom: 20px;
-    border-bottom: 2px solid #4a4a8e; /* 線でアクセント */
+    border-bottom: 2px solid #4a4a8e; 
     padding-bottom: 5px;
+}
+.result_comment img {
+    max-width: 15%;
+    max-height: 10%;
+    margin-left: 10px;
+}
+.result_header {
+    display: flex;
 }
 
 .nigate h2 {

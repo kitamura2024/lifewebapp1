@@ -139,6 +139,9 @@ def nigate_a2():
 @app.route('/nigate_a3')#「遅刻」
 def nigate_a3():
     return render_template('nigate_a3.html')
+@app.route('/nigate_z1')#「z1」
+def nigate_z1():
+    return render_template('nigate_z1.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
