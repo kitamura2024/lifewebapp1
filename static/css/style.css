@@ -47,7 +47,7 @@ a {
     border-right: 1px solid #ddd;
     margin-top: 10px;
     margin-bottom: 10px;
-    position: relative;/*sub-menu*/
+    position: relative;
 }
 .header ul li:first-child {
     border-left: 1px solid #ddd;
@@ -83,8 +83,8 @@ ul > li:hover > a{
     background-color: #efefef;
     color: #444;
 }
-/* Submenu */
 
+/* サブメニュー */
 ul li ul{
     position: absolute;
     top: 55px;
@@ -150,16 +150,15 @@ ul li ul li a:hover{
 .btn {
     background: #79a1b1;
     color: white;
-    padding: 15px 20px 12px; /* 文字の周りに余白をつける */
-    border: 2px solid #3b3b3b; /* `solid` を追加 */
-    border-radius: 20px; /* 角を丸くする */
+    padding: 15px 20px 12px; 
+    border: 2px solid #3b3b3b; 
+    border-radius: 20px; 
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.3s, transform 0.2s; /* なめらかに変化 */
+    transition: box-shadow 0.3s, transform 0.2s; 
 }
-
 .btn:hover {
-    box-shadow: 4px 4px 8px #3b3b3b; /* ホバー時に影をつける */
-    transform: scale(1.05); /* 少し拡大して目立たせる */
+    box-shadow: 4px 4px 8px #3b3b3b; 
+    transform: scale(1.05); 
 }
 
 /*フッター*/
@@ -232,7 +231,7 @@ ul li ul li a:hover{
   .author-social li {
     margin: 0 10px;
   }
-/* ブログ記事 */
+/* 記事 */
 article {
     font-family: Arial, sans-serif;
     margin-top: 20px;
@@ -299,7 +298,7 @@ article ul {
     padding-bottom: 5px;
 }
 /* 縦スクロール */
-.scrollable-form {
+.question-form {
     max-height: auto;
     max-width: 1200px;
     padding: 20px;
@@ -323,16 +322,16 @@ article ul {
     margin-bottom: 10px;
 }
 .answer-options label {
-    display: inline-block; /* ラベルとラジオボタンを整列 */
-    justify-content: center; /* 中央揃え */
-    padding: 10px 20px; /* 内側の余白 */
-    border: 2px solid #ccc; /* ボーダー追加 */
-    border-radius: 10px; /* 角を丸く */
+    display: inline-block; 
+    justify-content: center; 
+    padding: 10px 20px; 
+    border: 2px solid #ccc; 
+    border-radius: 10px; 
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* アニメーションの設定 */
     cursor: pointer; /* 選択を可能にする */
-    background-color: #ffffff; /* ボタンの初期背景色 */
+    background-color: #ffffff; 
 }
-/* フォーカスされた場合の効果 */
+/* 回答欄ホバー時 */
 .answer-options input[type="radio"]:hover + label{
     transform: scale(1.04); /* わずかに拡大 */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* より強調された影 */
@@ -346,10 +345,10 @@ article ul {
 
 /* 選択時、label要素に適用*/
 .answer-options input[type="radio"]:checked + label{
-    transform: scale(1.07) ; /* 選択時に少し大きく */
-    background-color: #90caf9; /* 選択時の背景色 */
-    border-color: #42a5f5; /* 選択時のボーダー色 */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* より強調された影 */
+    transform: scale(1.07) ; 
+    background-color: #90caf9; 
+    border-color: #42a5f5; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
 }
 
 /* ボタン */
@@ -363,13 +362,12 @@ button[type="submit"] {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
 }
-
 button[type="submit"]:hover {
     background-color: #1e88e5;
     transform: scale(1.05);
 }
 
-/* 診断結果の表示部分 */
+/* 診断結果の表示 */
 .result_comment {
     max-width: 800px; 
     margin: 50px;
@@ -396,56 +394,53 @@ button[type="submit"]:hover {
     display: flex;
 }
 
-.nigate h2 {
-    font-size: 1.8em; /* 強調する大きさ */
+/*苦手対策ページ一覧*/
+.nigate_page_list h2 {
+    font-size: 1.8em; 
     font-weight: 600;
     margin-top: 25px;
     margin-bottom: 20px;
-    color: #4a4a8e; /* 上品なダークブルー */
-    border-bottom: 2px solid #4a4a8e; /* 線でアクセント */
+    color: #4a4a8e; 
+    border-bottom: 2px solid #4a4a8e; 
     padding-bottom: 5px;
 }
-.blog_page {
-    max-width: 800px; /* 適度な幅 */
+.nigate_page_list {
+    max-width: 800px; 
     margin: 50px; 
     padding: 20px;
-    background: #fff; /* 背景を白で強調 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* さりげない影 */
-    border-radius: 10px; /* 角を丸く */
+    background: #fff; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
 }
-.blog_page ul {
+.nigate_page_list ul {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2列に分割 */
-    gap: 20px; /* 隙間 */
+    grid-template-columns: repeat(2, 1fr); /*2列に分割*/
+    gap: 20px; 
 }
-.blog_page ul li{
+.nigate_page_list ul li{
     margin: 10px 0;
 }
-.blog_page ul li a {
-    text-decoration: none; /* 下線を削除 */
-    color: #4a4a8e; /* リンクの色 */
-    font-size: 1.1em; /* 読みやすい大きさ */
+.nigate_page_list ul li a {
+    text-decoration: none; 
+    color: #4a4a8e; 
+    font-size: 1.1em; 
     font-weight: 500;
-    transition: all 0.3s ease-in-out; /* なめらかな変化 */
+    transition: all 0.3s ease-in-out; 
 }
-
-.blog_page ul li a:hover {
-    color: #ff6347; /* ホバー時におしゃれな赤に変化 */
-    text-decoration: underline; /* 下線を追加して視覚的な変化 */
-}
-
-/* リスト項目のスタイル */
-.blog_page ul li {
+/*リストホバー時*/
+.nigate_page_list ul li {
     padding: 10px;
-    background: #f9f9ff; /* さりげない背景色 */
-    border: 1px solid #ddd; /* 薄いボーダー */
+    background: #f9f9ff; 
+    border: 1px solid #ddd; 
     border-radius: 8px;
     transition: all 0.3s ease;
 }
-
-.blog_page ul li:hover {
-    background: #eaeaff; /* ホバー時の柔らかい色変更 */
-    transform: translateY(-3px); /* 少し浮き上がるような効果 */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 影を追加 */
+.nigate_page_list ul li:hover {
+    background: #e4e0b7; 
+    transform: translateY(-3px); 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.nigate_page_list ul li a:hover {
+    background: #e4e0b7; 
 }
 

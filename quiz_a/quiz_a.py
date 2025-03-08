@@ -1,3 +1,9 @@
+"""
+苦手診断「仕事・作業編」の機能ファイルです。
+question_a.htmlにrender_template関数を使って変数を送信し、
+表示させています。
+"""
+
 from flask import Blueprint, render_template, request
 
 #Blueprintを定義
@@ -67,7 +73,7 @@ questions = [
     {"question": "『割とテキパキ動くことができる』", "options": ["そう思う", "ややそう思う", "あまりそう思わない", "そう思わない"], "type": "personality_i"},
     {"question": "『パズルや謎解きゲームのようにじっくりと考えたり推理したりすることが好きだ』", "options": ["そう思う", "ややそう思う", "あまりそう思わない", "そう思わない"], "type": "personality_j"},
 ]
-questions_with_index = list(enumerate(questions))  # インデックス付きリストを作成
+questions_with_index = list(enumerate(questions))  #質問リストを作成
 
 @quiz_bp_a.route("/quiz_a", methods=["GET", "POST"])
 def quiz():

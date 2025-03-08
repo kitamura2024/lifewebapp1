@@ -1,13 +1,19 @@
+"""
+苦手診断「コミュニケーション編」の機能ファイルです。
+question_b.htmlにrender_template関数を使って変数を送信し、
+表示させています。
+"""
+
 from flask import Blueprint, render_template, request
 
 #Blueprintを定義
 quiz_bp = Blueprint('quiz_b', __name__, template_folder='../templates')
 
 #初期化
-socialAnxiety = 0
-lackOfEmpathy = 0
-inattention =0 
-cognition =0
+socialAnxiety = 0 #対人不安
+lackOfEmpathy = 0 #抽象的なことに対する苦手
+inattention =0 #衝動性
+cognition =0 #不注意
 
 def add_point(x):
     return x + 1
@@ -44,7 +50,7 @@ questions = [
     {"question": "『初対面の人と会うことはできるだけ避けたい。』", "options": ["そう思う", "ややそう思う", "あまりそう思わない", "そう思わない"], "type": "personality_i"},
     {"question": "『よく裏で自分の悪口を言われているように思う。』", "options": ["そう思う", "ややそう思う", "あまりそう思わない", "そう思わない"], "type": "personality_j"},
 ]
-questions_with_index = list(enumerate(questions))  # インデックス付きリストを作成
+questions_with_index = list(enumerate(questions))  #質問リストを作成
 
 @quiz_bp.route("/quiz_b", methods=["GET", "POST"])
 def quiz():

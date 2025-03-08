@@ -9,7 +9,7 @@
         <p>『仕事』や『作業』におけるあなたの苦手をチェックしてみましょう。</p>
         <p>10の質問に回答して「結果を見る」ボタンを押すとあなたの苦手が表示されます。</p>
     </div>
-    <div class="scrollable-form">
+    <div class="question-form">
         <form method="POST">
             {% for i, question in questions_with_index %}
             <div class="question-block">
@@ -39,10 +39,8 @@
         <p>{{ result }}</p>
     </div>
 </div>
-<div class="blog_page">
-    <div class="nigate">
-        <h2>苦手対策ページ一覧</h2>
-    </div>
+<div class="nigate_page_list">
+    <h2>苦手対策ページ一覧</h2>
     <ul>
         <li><a href="{{url_for('nigate_a2')}}">物忘れ</a></li>
         <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>

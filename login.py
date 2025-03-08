@@ -1,4 +1,8 @@
-from flask import Flask, session
+"""
+管理者のログイン機能のための関数をまとめたファイルです。
+"""
+
+from flask import session
 from models import User
 
 def is_login():

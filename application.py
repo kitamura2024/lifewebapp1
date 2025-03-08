@@ -7,7 +7,8 @@ from login import is_login, try_login, try_logout
 
 app = Flask(__name__)
 
-app.register_blueprint(quiz_bp)#Blueprintを登録
+#Blueprintを登録
+app.register_blueprint(quiz_bp)
 app.register_blueprint(quiz_bp_a)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -21,7 +22,7 @@ db.init_app(app)
 # 初回起動時にデータベースを初期化
 with app.app_context():
     db.create_all()
-###
+
 # 管理者ページ：リリース一覧
 @app.route('/admin/releases')
 def admin_releases():
@@ -119,7 +120,7 @@ def register():
         <h1>登録が完了しました！</h1>
         <p><a href="/">ログインページに戻る</a></p>
         """
-###
+
 
 @app.route('/')#Topページ
 def top():
@@ -139,7 +140,7 @@ def nigate_a2():
 @app.route('/nigate_a3')#「遅刻」
 def nigate_a3():
     return render_template('nigate_a3.html')
-@app.route('/nigate_z1')#「z1」
+@app.route('/nigate_z1')#調整用ページ（利用者には表示されない）
 def nigate_z1():
     return render_template('nigate_z1.html')
 
