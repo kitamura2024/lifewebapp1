@@ -4,44 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width", initial-scale="1.0">
-    <meta name="description" content=""><!-- nameが何か、contentはどのように表示するか -->
+    <meta name="description" content="">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     
-    <title>{% block title%}タイトル{% endblock %}</title>
+    <title>{% block title%}大人の苦手対策教室{% endblock %}</title>
 </head>
 <body>
     <div class="header">
-        <div class="main">
-            {% block header %}大人の苦手対策教室{% endblock %}
-        </div>
-        <ul>
-            <li><a href="{{url_for('top')}}">Top画面</a></li>
-            <li><a href="{{url_for('index')}}">苦手診断</a></li>
-            <li><a href="{{url_for('nigate_a2')}}">物忘れ</a></li>
-            <li><a href="{{url_for('list')}}">遅刻</a></li>
-            <li><a href="{{url_for('list')}}">人間関係</a></li>
-            <li><a href="{{url_for('list')}}">メンタル</a></li>
-        </ul>    
-    </div>
-    <div class="container w_inner">
-            {% block content %}
-            内容
+        <div class="page_name">
+            {% block header %}
+            <a href="{{url_for('top')}}">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="大人の苦手対策教室ロゴ" class="site-logo">
+            </a>
             {% endblock %}
+        </div>
+        <!-- ハンバーガーメニューのボタン -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>        
+        <div class="header_contents">
+            <ul>
+                <li>
+                    <a>苦手診断</a>
+                    <ul class="sub-menu">
+                        <li><a href="{{url_for('question_atop')}}">仕事・作業編</a></li>
+                        <li><a href="{{url_for('question_btop')}}">コミュニケーション編</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>物忘れ</a>
+                    <ul class="sub-menu">
+                        <li><a href="{{url_for('nigate_a2')}}">置き忘れ</a></li>
+                        <li><a href="{{url_for('nigate_a5')}}">やるべきことを忘れる</a>
+                    </ul>   
+                </li>
+                <li>
+                    <a>遅刻</a>
+                    <ul class="sub-menu">
+                        <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>人間関係</a>
+                    <ul class="sub-menu">
+                        <li><a href="{{url_for('nigate_a4')}}">雑談が苦手</a></li>
+                    </ul>
+                </li>   
+                <li>
+                    <a>その他</a>
+                    <ul class="sub-menu">
+                        <li><a href="{{url_for('nigate_a6')}}">単純作業を素早くこなす</a></li>
+                        <li><a href="{{url_for('nigate_a7')}}">不安と緊張</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{url_for('purpose')}}">本サイトについて</a></li>
+            </ul>   
+        </div> 
     </div>
+    <main class="container w_inner">
+        {% block content %}
+            内容
+        {% endblock %}
+    </main>
     <div class="footer">
         <div class="page_link w_inner">
         {% block footer %}
         他のページへのURLを表示
         {% endblock %}
         </div>
-        <div class="pp_link w_inner">
-            <a href="">個人情報保護方針</a>
-        </div>
         <div class="copy">
-            &copy;2024 XXX
-        </div>
+            &copy;2025 大人の苦手対策教室 by とみやま
         </div>
     </div>
+
+    <!-- javascript -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.querySelector('.header_contents');
+    
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+    </script>
+    
 </body>    
 </html>

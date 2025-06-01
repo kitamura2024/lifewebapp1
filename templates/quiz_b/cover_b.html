@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+<head>
+    <meta charset="UTF-8">
+    {% block title%}苦手診断/コミュニケーション{% endblock %}
+</head>
+{% block content %}
+<div class="question_page">
+    <div class="header_img">
+        <img src="{{url_for('static', filename='img/communication.png')}}" alt="画像">
+    </div>
+    <div class="explanation">
+        <p>『コミュニケーション』におけるあなたの苦手をチェックしてみましょう。</p>
+        <ul>
+            <li>・この診断は、全10問の簡易的なチェックリストです。</li>
+            <li>・日常の傾向を把握するためのものであり、医療的・心理学的な診断を目的としたものではありません。
+                結果はあくまで参考としてご活用ください。</li>
+        </ul>
+    </div>
+    <br>
+    <a href="{{url_for('quiz_b.quiz_init_b')}}" class="btn">始める</a>
+</div>
+{% endblock %}
+
+{% block footer %}
+    <a href="{{url_for('top')}}">TOPへ</a>
+    <a href="{{url_for('purpose')}}">本サイトについて</a>
+{% endblock %}

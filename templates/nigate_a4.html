@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+<head>
+    <meta charset="UTF-8">
+    {% block title%}大人の苦手対策教室{% endblock %}
+</head>
+<body>
+    {% block header %}
+    <a href="{{url_for('top')}}">大人の苦手対策教室</a>
+    {% endblock %}
+    {% block content %}
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <ol>
+            <li><a href="{{ url_for('top') }}">ホーム</a></li>
+            <li><a href="{{ url_for('nigate_list') }}">苦手対策一覧</a></li>
+            <li aria-current="page">雑談が苦手</li>
+        </ol>
+    </nav>
+    <article>
+        <div class="blog_img">
+            <img src="{{url_for('static', filename='img/talk.jpg')}}" alt="会話">
+        </div>
+        <h2>大人の苦手対策教室：“雑談が苦手”</h2>
+        <dev class="article_type">
+            <dev class="category" href="{{url_for('nigate_a2')}}">コミュニケーション</dev>
+            <time class="datetime_check" datetime="2025-04-08" aria-label="更新日">2025年1月16日</time>
+        </dev>
+        <div class="conversation">
+            <div class="speaker speaker-right">
+                <div class="bubble bubble-right">
+                    <p>仕事の始まる前とか休憩時間に少し話したりするあの時間が苦手なんですよね。
+                        あれって何を話せばいいんですか？</p>
+                </div>
+                <img src="{{url_for('static', filename='img/kepu.png')}}" alt="ケープ">
+            </div>
+            <div class="speaker speaker-left">
+                <img src="{{url_for('static', filename='img/humstar_nomal.png')}}" alt="ジャンガリ">
+                <div class="bubble bubble-left">
+                    <p>雑談って考えてみると難しいですよねえ。仕事のように“これを言うべき！”が決まっている訳じゃないから、自由だからこその難しさがありますね。</p>
+                </div>
+            </div>
+        </div>
+        
+        <p>大人になると仕事上の付き合いやママ友パパ友との関わり等、ある程度良い関係を築きたいような人との関わりが出てきます。
+            そういうとき、親しい友人とも家族とも違うような、あまり相手に深入りするのも違うし、自分のことをべらべらと話すのも…という微妙な感じ。
+            話すネタに困る人は案外多いのではないでしょうか。</p>
+        <p>タイプ別に対策をまとめてみたので、見てみてください。</p>
+        <section>
+            <h3>雑談への対策 （１）話したいけど、話すことがなくて困るとき</h3>
+            <h4>なんでもよいからとにかく話す</h4>
+            <p>相手がどう返すかを想像しすぎてしまうと、何を話すことにも抵抗が生まれます。
+                あまり考えすぎず、なんでもいいから話してみるようにしましょう。</p>
+            <h4>会話は一人では作れない</h4>
+            <p>会話は二人以上で作るもの。一人で会話は完成しません。
+                思ったより会話がうまくいかないこともあるかもしれませんが、
+                自分だけの責任に思うことはありません。そのとき相手の人に余裕がなかったり、
+                雑談をしなくてよいと考えている人だったり、いろんな人がいますから、
+                あなたはひとこと話しかけただけでも十分役目は果たしています。</p>
+            <h4>無難な話題リスト</h4>
+            <p>お昼ごはん、天気、職場近くの地域のネタ等は無難な話題です。それから飲み会等、話す時間がたっぷりあるときには、
+                子供のときの給食や修学旅行、昔やってた運動等はほとんどの人にとって経験のある話題なのでお互いに話しやすいと思います。
+                どうしても雑談が苦手という方は自分の中での雑談リストを作っておくとネタに困らなくなるかもしれませんね。</p>
+            
+            <h3>雑談への対策  （２）仲良くなりたい相手のとき</h3>
+            <h4>雑談のための雑談</h4>
+            <p>相手がどんな人で、どんな趣味があって、どこ出身で、今どんな仕事してるのかとか、
+                どんなことでも相手のことを知っておくと、次に話すときにはその話題を使うことができるので
+                最初より話しやすくなります。２回目以降は「この前言ってた○○、ちょっと前にテレビ出てたよ〜」みたいな話しかけ方もできますね。
+                「雑談のための雑談」は会話を楽しくするために必要なことです。</p>
+
+            <h3>雑談への対策  （３）話しかけにくいと周りから思われているとき</h3>
+            <h4>挨拶＋ひとこと</h4>
+            <p>おはよう等の挨拶のあと、必ず一言何か言うルールを自分の中に作りましょう。
+                例えば「おはよう」のあとに「今日は少し寒いですね」と付け足すような感じです。
+                内容に意味があるかないかは考えません。
+                また相手がどう返してくるかもあまり想像しないようにしましょう。
+                話しかけにくい、冷たい人と周りから思われやすい人はいつもより少し言葉を足すだけで
+                周りの人が話しやすくなることがあります。
+                </p>
+        </section>
+        <div class="conversation">
+            <div class="speaker speaker-right">
+                <div class="bubble bubble-right">
+                    <p>“雑談”について身構えすぎていたのかも。
+                        もっと気軽に話していいってことですね！
+                        </p>
+                </div>
+                <img src="{{url_for('static', filename='img/kepu.png')}}" alt="ケープ">
+            </div>
+            <div class="speaker speaker-left">
+                <img src="{{url_for('static', filename='img/humstar_nomal.png')}}" alt="ジャンガリ">
+                <div class="bubble bubble-left">
+                    <p>考えすぎて何も言えないという人は結構多いねえ。
+                        人から話を振られたときもはいとかうんで返したあとに
+                        なんでもいいから付け足しておくと盛り上がりやすいかもしれません。
+                        </p>
+                </div>
+            </div>
+        </div>
+        <div class="summary">
+            <h5>まとめ</h5>
+            <ul id="summary_list">
+                <li>挨拶にひとこと足す習慣を作る</li>
+                <li>相手の返答を想像し過ぎない</li>
+            </ul>
+        </div>
+    </article>
+    {% endblock %}
+</body>
+
+{% block footer %}
+<div class="nigate_page_list">
+    <h2>その他おすすめの苦手対策</h2>
+    <ul>
+        <li><a href="{{url_for('nigate_a2')}}">置き忘れ</a></li>
+        <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
+        <li><a href="{{url_for('nigate_a6')}}">単純作業を素早くこなす</a></li>
+        <li><a href="{{url_for('nigate_a7')}}">不安と緊張</a></li>
+    </ul>    
+</div>
+<br>
+    <a href="{{url_for('top')}}">Top画面</a>
+    <a href="{{url_for('purpose')}}">このサイトについて</a>
+{% endblock %}

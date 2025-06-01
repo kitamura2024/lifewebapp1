@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+<head>
+    <meta charset="UTF-8">
+    {% block title%}大人の苦手対策教室{% endblock %}
+</head>
+<body>
+    {% block header %}
+    <a href="{{url_for('top')}}">大人の苦手対策教室</a>
+    {% endblock %}
+    {% block content %}
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <ol>
+            <li><a href="{{ url_for('top') }}">ホーム</a></li>
+            <li><a href="{{ url_for('nigate_list') }}">苦手対策一覧</a></li>
+            <li aria-current="page">やるべきことを忘れる</li>
+        </ol>
+    </nav>
+    <article>
+        <div class="blog_img">
+            <img src="{{url_for('static', filename='img/todo.jpg')}}" alt="会話">
+        </div>
+        <h2>大人の苦手対策教室：“やるべきことを忘れる”</h2>
+        <dev class="article_type">
+            <dev class="category" href="{{url_for('nigate_a2')}}">仕事・作業</dev>
+            <time class="datetime_check" datetime="2025-04-09" aria-label="更新日">2025年4月9日</time>
+        </dev>
+        <div class="conversation">
+            <div class="speaker speaker-right">
+                <div class="bubble bubble-right">
+                    <p>ああ！すっかり忘れてた！今日中にやらなきゃいけないのに～。どうしていつも、やらなきゃいけないことを忘れちゃうんだろう。</p>
+                </div>
+                <img src="{{url_for('static', filename='img/kepu.png')}}" alt="ケープ">
+            </div>
+            <div class="speaker speaker-left">
+                <img src="{{url_for('static', filename='img/humstar_nomal.png')}}" alt="ジャンガリ">
+                <div class="bubble bubble-left">
+                    <p>仕事でもプライベートでも、毎日やることって本当に多いですよね。一つのことに集中してると、ほかのことをつい忘れちゃったり…。</p>
+                </div>
+            </div>
+        </div>
+        
+        <p>人は毎日「やらなきゃいけないこと」や「やりたいこと」がたくさんあります。
+            特に、いろんなことに気づける人や視野が広い人ほど、やるべきことにどんどん気づいて、やることリストが増えていきがちです。
+            それに、やることの順番を決めたり計画を立てたりするのが得意な人もいれば、ちょっと苦手な人もいます。
+            苦手な人にとっては、「何から手をつければいいのか分からない…」と悩んでいるうちに、
+            やるべきことを忘れてしまうこともあるんです。</p>
+        <p>それから、短期記憶といって、頭の中に一時的に覚えておく力も人それぞれ。
+            実は、単純な数字の並びですら、私たちは一時的に6～7個くらいしか覚えられないんですよ。
+            つまり、頭の中に入れておける量には限界があるということですね。
+            だから、やるべきことを忘れてしまうのは「努力が足りないから」とかじゃなくて、ごく自然なこととも言えるんです。</p>
+        <section>
+            <h3>「やるべきこと」を忘れないための工夫</h3>
+            <h4>（１）リマインダー機能を使う</h4>
+            <p>スマホやパソコンには、予定ややることをメモしておくと、時間になったら教えてくれる機能があります。
+                特にスマホはいつも手元にあるので、「○時間後に通知」などを設定しておけば、ちょうどいいタイミングで思い出すきっかけになります。</p>
+            <div class="conversation">
+                <div class="speaker speaker-left">
+                    <img src="{{url_for('static', filename='img/humstar_nomal.png')}}" alt="ジャンガリ">
+                    <div class="bubble bubble-left">
+                        <p>LINEのトークで後から通知してくれる<a href="https://reminekun.com/">「リマインくん」</a>もおすすめ !
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <h4>（２）習慣化する</h4>
+            <p>例えば「職場に着いたらまずメールをチェック→スケジュール確認→チームに連絡」など、日々のルーティンにしてしまえば、自然と忘れにくくなります。慣れるまでは忘れがちなので、作業の順番を①②③とメモしておくと安心ですね。</p>
+            <h4>（３）思いついたらすぐに書く！</h4>
+            <p>頭の中だけに入れておくと、時間がたつうちにすぐ消えてしまいます。「あ、あれやらなきゃ」と思ったら、その場ですぐに書き残すクセをつけましょう。
+                メモをするだけでなく、リマインダー機能に登録しておけば、「メモを見るのを忘れた…」も防げます。
+            </p>
+        </section>
+        
+        <div class="conversation">
+            <div class="speaker speaker-left">
+                <img src="{{url_for('static', filename='img/humstar_nomal.png')}}" alt="ジャンガリ">
+                <div class="bubble bubble-left">
+                    <p>頭の中だけじゃなくて、目に見えるところにやることをまとめておくと安心ですね。
+                        そして終わったものはどんどん消していく。
+                        あとから見返すと、「今日もいっぱい頑張ったな～」って、達成感も味わえますよ！
+                        </p>
+                </div>
+            </div>
+        </div>
+        <div class="summary">
+            <h5>まとめ</h5>
+            <ul id="summary_list">
+                <li>やるべきことはすぐにメモorリマインド</li>
+                <li>習慣化できたら最強！</li>
+            </ul>
+        </div>
+    </article>
+    {% endblock %}
+</body>
+
+{% block footer %}
+<div class="nigate_page_list">
+    <h2>その他おすすめの苦手対策</h2>
+    <ul>
+        <li><a href="{{url_for('nigate_a2')}}">置き忘れ</a></li>
+        <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
+        <li><a href="{{url_for('nigate_a4')}}">雑談</a></li>
+        <li><a href="{{url_for('nigate_a7')}}">不安と緊張</a></li>
+    </ul>    
+</div>
+<br>
+    <a href="{{url_for('top')}}">Top画面</a>
+    <a href="{{url_for('purpose')}}">このサイトについて</a>
+{% endblock %}

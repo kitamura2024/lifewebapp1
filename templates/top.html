@@ -1,34 +1,58 @@
 {% extends "base.html" %}
 
 <head>
-   
     {% block title%}大人の苦手対策教室{% endblock %}
 </head>
-<body>
-    {% block header %}大人の苦手対策教室{% endblock %}
 
-    {% block content %}
+{% block content %}
+<body>
     <div class="header_img">
         <img src="{{url_for('static', filename='img/header_cat.png')}}" alt="ヘッダー画像">
     </div>
     <div class="test_block">
         <div class="test">
             <img src="{{url_for('static', filename='img/park_girl.png')}}" alt="画像が表示されません">
-            <div class="ttl">苦手・悩み克服診断【ひとり活動編】</div>
+            <div class="ttl">苦手・悩み克服診断【仕事・作業編】</div>
             <div class="explain">ものわすれ、遅刻など、生活の中でのあなたの苦手や悩みを簡単に診断します。</div>
-            <a href="{{url_for('quiz_a.quiz')}}">診断画面へ</a>
+            <a href="{{url_for('question_atop')}}" class="btn">診断する</a>
         </div>
         <div class="test">
             <img src="{{url_for('static', filename='img/with_kiwi.png')}}" alt="画像が表示されません">
             <div class="ttl">苦手・悩み克服診断【コミュニケーション編】</div>
             <div class="explain">人との関わりや集団の中での生活における苦手や悩みを簡単に診断します。</div>
-            <a href="{{url_for('quiz_b.quiz')}}">診断画面へ</a>
+            <a  href="{{url_for('question_btop')}}" class="btn">診断する</a>
         </div>
     </div>
-    {% endblock %}
+    <div class="new-releases">
+        <section id="topNewRelease">
+            <img src="{{url_for('static', filename='img/topNewReleases.png')}}" alt="画像が表示されません">
+        </section>
+        {% for release in new_releases %}
+        <div class="release-item">
+            <br>
+            <p class="date">{{ release.date }}</p>
+            <h2>{{ release.title }}</h2>
+            <p class="description">{{ release.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="popular_section">
+        <h2>よく読まれている対策</h2>
+        <ul class="popular_list">
+            <li>
+                <span class="popular_title_item">不安と緊張</span>
+                <span class="popular_link_item"><a href="{{ url_for('nigate_a7') }}">対策を読む ></a></span>
+            </li>
+            <li>
+                <span class="popular_title_item">雑談が苦手</span>
+                <span class="popular_link_item"><a href="{{ url_for('nigate_a4') }}">対策を読む ></a></span>
+            </li>
+        </ul>
+    </div>
 </body>
+{% endblock %}
 
 {% block footer %}
-    <a href="{{url_for('index')}}">診断画面へ</a>
-    <a href="{{url_for('list')}}">商品一覧練習用ページ</a>
+    <a href="{{url_for('purpose')}}">本サイトについて</a>
+    <a href="{{url_for('login_page')}}">管理者用ページ</a>
 {% endblock %}

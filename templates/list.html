@@ -2,21 +2,61 @@
 
 <head>
     <meta charset="UTF-8">
-    {% block title%}ポケットモンスタースカーレット最高{% endblock %}
+    {% block title%}苦手克服教室・目的{% endblock %}
 </head>
 <body>
-    {% block header %}ポケモン一覧表{% endblock %}
     {% block content %}
-    <table border="1">
-        <thead>
-            <tr><th>商品ID</th><th>商品名</th></tr>
-        </thead>
-        <tbody>
-            <tr><td><a href="{{url_for('nigate_a1', id=1)}}">1</a></td><td>メタモン</td></tr>
-            <tr><td><a href="{{url_for('nigate_a1', id=2)}}">2</a></td><td>ジュカイン</td></tr>
-            <tr><td><a href="{{url_for('nigate_a1', id=3)}}">3</a></td><td>ナットレイ</td></tr>
-        </tbody>
-    </table>
+    <article>
+        <div class="purpose">
+            <h4>本サイトの作成の経緯</h4>
+            <p>近年は転職がしやすくなってきたこともあり、離職率も高まっています。
+                テレビやインターネットでも、転職サポートの広告を目にする機会が増えました。
+                一方で、転職の方法によっては、新しい職場でも同じ悩みを抱えてしまったり、
+                自分の苦手なことでつまずき続けてしまう方もいらっしゃいます。
+                ですが、苦手なことに対しては、大人になってからでもまだできる対策があります。
+                まだ試していない方法があるかもしれません。
+                そんな思いから、このサイトを立ち上げました。
+                少しでも、皆さんのこれからの働き方に役立つヒントをお届けできれば嬉しいです。
+            <h4>本サイトの目的</h4>
+            <ul>
+                <li>・自分の「苦手」を客観的に理解する。</li>
+                <li>・「苦手」に対する工夫や対策を考える。</li>
+            </ul>
+            
+            <h4>本サイトに使用した画像について</h4>
+            <p>本サイトは以下のサイトから商用利用可能な画像を使用しております。</p>
+            <ul>
+                <li>・shigureni free illust（<a href="https://example.com" target="_blank">https://example.com</a>）</li>
+                <li>・いらすとん（<a href="https://www.irasuton.com/" target="_blank">https://www.irasuton.com/</a>）</li>
+            </ul>
+            <h4>登場人物紹介</h4>
+            <div class="character_block">
+                <div class="character">
+                    <img src="{{url_for('static', filename='img/humstar_syokai.png')}}" alt="ジャンガリ先生">
+                    <p>ジャンガリ先生</p>
+                </div>
+                <div class="character">
+                    <img src="{{url_for('static', filename='img/kepu.png')}}" alt="ケープ">
+                    <p>ケープ（ケープハイラックス）※ChatGPTによる作成</p>
+                </div>
+                <div class="character">
+                    <img src="{{url_for('static', filename='img/ango.png')}}" alt="アンゴ">
+                    <p>アンゴ※ChatGPTによる作成</p>
+                </div>
+            </div>
+        </div>
+        <div class="author-box">
+            <img src="{{url_for('static', filename='img/kotatsu_ushi.jpg')}}" alt="自然の風景">
+            <div class="author-info">
+                <h2>とみやま</h2>
+                <p>このサイトの制作者です。臨床心理士、公認心理師です。</p>
+                <ul class="author-social">
+                    <li><a href="https://x.com/finn_ranches?s=21&t=7mBRRwySi3ohg3lMqDxP5Q">X (旧Twitter)</a></li>
+                    <li><a href="https://www.instagram.com/fin__psychologist/?igsh=aXVuZXFzeDBpcHdw&utm_source=qr">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </article>
     {% endblock %}
 </body>
 

@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+<head>
+    <meta charset="UTF-8">
+    {% block title%}大人の苦手対策教室{% endblock %}
+</head>
+<body>
+    {% block header %}
+    <a href="{{url_for('top')}}">大人の苦手対策教室</a>
+    {% endblock %}
+    {% block content %}
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <ol>
+            <li><a href="{{ url_for('top') }}">ホーム</a></li>
+            <li><a href="{{ url_for('nigate_list') }}">苦手対策一覧</a></li>
+            <li aria-current="page">単純作業を素早くこなす</li>
+        </ol>
+    </nav>
+    <article>
+        <div class="blog_img">
+            <img src="{{url_for('static', filename='img/todo.jpg')}}" alt="会話">
+        </div>
+        <h2>大人の苦手対策教室：“単純作業を素早くこなす”</h2>
+        <dev class="article_type">
+            <dev class="category" href="{{url_for('nigate_a2')}}">仕事・作業</dev>
+            <time class="datetime_check" datetime="2025-04-18" aria-label="更新日">2025年4月18日</time>
+        </dev>
+        <div class="conversation">
+            <div class="speaker speaker-right">
+                <div class="bubble bubble-right">
+                    <p>うーん、洗濯とか食器洗いとか、もっとテキパキできたらいいんだけど…。
+                        いつも時間かかっちゃって、気づいたら寝る時間に。周りの友達はもっと自分の時間を作れてるのになあ。</p>
+                </div>
+                <img src="{{url_for('static', filename='img/ango.png')}}" alt="アンゴ">
+            </div>
+            <div class="speaker speaker-left">
+                <img src="{{url_for('static', filename='img/humstar_nomal.png')}}" alt="ジャンガリ">
+                <div class="bubble bubble-left">
+                    <p>そうなんだ。僕もメールの返信とか、書類のチェックとか、単純だけど面倒な作業はやる気も出にくくて、時間がかかっちゃうなあ。
+                        でもね、ちょっとした工夫で作業がスムーズになることもあるみたい。今回は、そのコツを一緒に考えてみよう！ 
+                        </p>
+                </div>
+            </div>
+        </div>
+        
+        <p>「単純作業」や「日常のルーティン作業」は、考えることが少なくてすむぶん、同じことの繰り返しになりがちです。
+            だからこそ集中力が切れやすくて、
+            思った以上に時間がかかってしまうことも。行いやすい作業ではあるものの、時間がかかるわりに達成感が少ないということもあります。</p>
+        <p>またじっくり考えたり、深く考えることが得意な人にとっては様々な考えやこだわりによって余計な時間がかかってしまうこともあります。</p>
+        <section>
+            <h3>単純作業をテキパキこなすために</h3>
+            <h4>（１）目標や目的を明確に</h4>
+            <p>単純作業に取りかかる前に、「何を」「どのくらいで」終わらせたいかを決めておきましょう。例えば「10分以内に終わらせる」「前回よりきれいにたたむ」
+                など、時間・仕上がりのどちらでもOK。目標や目的が明確だと、集中しやすくなり、やりがいも感じやすくなります。</p>
+            <h4>（２）自分に合った集中しやすい時間を見つける</h4>
+            <p>人によって集中力の続く時間は違います。</p>
+            <p>25分作業＋5分休憩の「ポモドーロ・テクニック」もありますが、
+                まずは15分、あるいは1時間など、自分に合ったペースを試してみましょう。</p>
+            <h4>（３）やるべきことを目に見える形にする</h4>
+            <p>タスクを視覚化すると、何をやるべきかが一目でわかり、次の行動にスムーズに移れます。
+                チェックリストやメモ、付箋など、自分に合った方法で見える化しましょう。
+                </p>
+        </section>
+        
+        <div class="conversation">
+            <div class="speaker speaker-right">
+                <div class="bubble bubble-right">
+                    <p>確かに目標があれば、やりやすいかも！</p>
+                </div>
+                <img src="{{url_for('static', filename='img/ango.png')}}" alt="アンゴ">
+            </div>
+            <div class="speaker speaker-left">
+                <img src="{{url_for('static', filename='img/humstar_nomal.png')}}" alt="ジャンガリ">
+                <div class="bubble bubble-left">
+                    <p>目標があることで方向性が定まるので迷いなく作業を進められますね！</p>
+                    <p>あとは、あまり高い目標でなくて「ちょっと頑張れば達成できるかも」ぐらいの目標にしておくことで
+                        やる気も継続しやすいですよ。</p>
+                </div>
+            </div>
+        </div>
+        <div class="summary">
+            <h5>まとめ</h5>
+            <ul id="summary_list">
+                <li>・単純作業には、目的や目標を持つことが集中力アップのカギ</li>
+                <li>・自分に合った時間の使い方を知る</li>
+            </ul>
+        </div>
+    </article>
+    {% endblock %}
+</body>
+
+{% block footer %}
+<div class="nigate_page_list">
+    <h2>その他おすすめの苦手対策</h2>
+    <ul>
+        <li><a href="{{url_for('nigate_a2')}}">置き忘れ</a></li>
+        <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
+        <li><a href="{{url_for('nigate_a4')}}">雑談</a></li>
+        <li><a href="{{url_for('nigate_a7')}}">不安と緊張</a></li>
+    </ul>    
+</div>
+<br>
+    <a href="{{url_for('top')}}">Top画面</a>
+    <a href="{{url_for('purpose')}}">このサイトについて</a>
+{% endblock %}

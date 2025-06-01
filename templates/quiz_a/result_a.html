@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="result_comment">
+    <h2>診断結果<img src="{{url_for('static', filename='img/result.png')}}" alt="画像"></h2>
+    <p>{{ comment }}</p>
+    <br>
+    <p>【あなたにおすすめの記事】<a href="{{ url }}">{{ blog_title }}🔗</a></p>
+</div>
+<div class="nigate_page_list">
+    <h2>苦手対策ページ一覧</h2>
+    <ul>
+        <li><a href="{{url_for('nigate_a2')}}">置き忘れ</a></li>
+        <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
+        <li><a href="{{url_for('nigate_a4')}}">雑談が苦手</a></li>
+        <li><a href="{{url_for('nigate_a5')}}">やるべきことを忘れる</a></li>
+    </ul>    
+</div>
+{% endblock %}
+{% block footer %}
+    <a href="{{url_for('top')}}">TOPへ</a>
+    <a href="{{url_for('quiz_a.quiz_init')}}">もう一度診断する</a>
+{% endblock %}

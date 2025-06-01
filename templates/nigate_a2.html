@@ -6,10 +6,20 @@
 </head>
 <body>
     {% block header %}
-    <h1>大人の苦手対策教室 ― 物忘れ ― </h1>
+    <a href="{{url_for('top')}}">大人の苦手対策教室</a>
     {% endblock %}
     {% block content %}
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <ol>
+            <li><a href="{{ url_for('top') }}">ホーム</a></li>
+            <li><a href="{{ url_for('nigate_list') }}">苦手対策一覧</a></li>
+            <li aria-current="page">置き忘れ</li>
+        </ol>
+    </nav>
     <article>
+        <div class="blog_img">
+            <img src="{{url_for('static', filename='img/okiwasure.jpg')}}" alt="自然の風景">
+        </div>
         <h2>大人の苦手対策教室：“置き忘れ”</h2>
         <dev class="article_type">
             <dev class="category" href="{{url_for('nigate_a2')}}">ひとり編</dev>
@@ -61,23 +71,36 @@
         <p>焦っているときには、行き先に間に合うかどうか等、自分の手荷物以外のことに向いているため、置き忘れしやすくなります。
         時間に余裕をもつと心に余裕ができるので、忘れ物を減らすことができます。置き忘れ以外でも忘れ物が多い人は時間ギリギリで行動しがちです。
         特にいつもと違う時間、違う場所に行くときには「早すぎかな？」と思うくらいの気持ちで自宅を出るようにしましょう。</p>
-            
-        <h3>まとめ</h3>
-        <p>ここでは忘れ物の中でも外出時の“置き忘れ”の対策についてご紹介しました。
-        忘れ物は私たちの生活や仕事に大きな影響を及ぼす可能性がありますが、適切な対策を立てることで、その影響を減らすことができます。それぞれの対策が必ず有効であるわけではありませんが、複数の対策を組み合わせることで有効になることもあると思います。
-        上記に記載した対策は可能な対策の一部だと思います。自分に合った対策や工夫が見つけるための一つの参考になれば幸いです。</p>
+        <div class="summary">
+            <h5>まとめ</h5>
+            <ul id="summary_list">
+                <li>・できる限り物を置かない等、適切な対策で生活や仕事への影響を軽減可能</li>
+                <li>・置いたら必ず忘れる。覚えておく以外の対策を考える</li>
+            </ul>
+        </div> 
         
         <ul>
             <li>おすすめの書籍</li>
             <li>「なるほど! の本 あなたの その「忘れもの」 コレで防げます (NHK出版なるほど!の本) 」 - 芳賀 繁</li>
             <li>「マンガでわかる 大人のADHDコントロールガイド」 - 福西 勇夫・福西 朱美</li>
         </ul>
+        <br>
+        <p>※ここで紹介した対策は一例です。自分に合った対策を見つける参考になれば幸いです。</p>
     </article>
     {% endblock %}
 </body>
 
 {% block footer %}
+    <div class="nigate_page_list">
+        <h2>その他おすすめの苦手対策</h2>
+        <ul>
+            <li><a href="{{url_for('nigate_a2')}}">置き忘れ</a></li>
+            <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
+            <li><a href="{{url_for('nigate_a5')}}">やるべきことを忘れる</a></li>
+            <li><a href="{{url_for('nigate_a7')}}">不安と緊張</a></li>
+        </ul>    
+    </div>
+    <br>
     <a href="{{url_for('top')}}">Top画面</a>
-    <a href="{{url_for('index')}}">苦手診断</a>
-    <a href="{{url_for('list')}}">listページ</a>
+    <a href="{{url_for('purpose')}}">このサイトについて</a>
 {% endblock %}

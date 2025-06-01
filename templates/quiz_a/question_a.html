@@ -1,51 +1,66 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="ja">
 
-{% block content %}
-<div class="question_page">
-    <h1>苦手・悩み克服診断【ひとり活動編】</h1>
-    <div class="scrollable-form">
-        <form method="POST">
-            {% for i, question in questions_with_index %}
-            <div class="question-block">
-                <p>質問{{ i+1 }}: {{ question.question }}</p>
-                <div class="answer-options">
-                    <input type="radio" id="q{{ i+1 }}_option1" name="q{{ i+1 }}" value="1" required><label for="q{{ i+1 }}_option1"> {{ question.options[0] }} </label>
-                    <input type="radio" id="q{{ i+1 }}_option2" name="q{{ i+1 }}" value="2"><label for="q{{ i+1 }}_option2"> {{ question.options[1] }} </label>
-                    <input type="radio" id="q{{ i+1 }}_option3" name="q{{ i+1 }}" value="3"><label for="q{{ i+1 }}_option3"> {{ question.options[2] }} </label>
-                    <input type="radio" id="q{{ i+1 }}_option4" name="q{{ i+1 }}" value="4"><label for="q{{ i+1 }}_option4"> {{ question.options[3] }} </label>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <title>大人の苦手対策教室</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="page_name">
+
+            <a href="{{url_for('top')}}">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="大人の苦手対策教室ロゴ" class="site-logo">
+            </a>
+
+        </div>
+        <!-- ハンバーガーメニューなし -->
+
+    </div>
+    <main class="container w_inner">
+
+        <div class="question_page">
+            <div class="explanation">
+                <p>質問 {{ current_index + 1 }} / {{ total_questions }}</p>
+                <p>{{ question.question }}</p>
             </div>
-            <hr>
-            {% endfor %}
-            <button type="submit" onclick="location.href='#result'">診断結果を表示</button>
-        </form>
-    </div>
-</div>
 
-{% if result %}
-<div id="result">
-    <div class="result_comment">
-        <h2>診断結果</h2>
-        <p>あなたの【・・ポイント】は【{{ simple }}】で、【・・ポイント】は【{{ time }}】です。</p>
-        <p>{{ result }}</p>
+            <form method="POST">
+                <div class="answer-options">
+                    {% for option in question.options %}
+                    <input type="radio" id="option{{ loop.index0 }}" name="answer" value="{{ loop.index }}" required>
+                    <label for="option{{ loop.index0 }}">{{ option }}</label><br>
+                    {% endfor %}
+                </div>
+
+                <button type="submit">
+                    {% if current_index + 1 == total_questions %}
+                    結果を見る
+                    {% else %}
+                    次へ
+                    {% endif %}
+                </button>
+            </form>
+        </div>
+
+    </main>
+    <div class="footer">
+        <div class="page_link w_inner">
+            <a href="{{url_for('top')}}">TOPに戻る</a>
+            <a href="{{url_for('purpose')}}">本サイトについて</a>
+        </div>
+        <div class="copy">
+            &copy;2025 大人の苦手対策教室 by とみやま
+        </div>
     </div>
-</div>
-<div class="blog_page">
-    <div class="nigate">
-        <h2>苦手対策ページ一覧</h2>
-    </div>
-    <ul>
-        <li><a href="{{url_for('top')}}">Top画面</a></li>
-        <li><a href="{{url_for('index')}}">苦手診断</a></li>
-        <li><a href="{{url_for('nigate_a2')}}">物忘れ</a></li>
-        <li><a href="{{url_for('list')}}">遅刻</a></li>
-        <li><a href="{{url_for('list')}}">人間関係</a></li>
-        <li><a href="{{url_for('list')}}">メンタル</a></li>
-    </ul>    
-</div>
-{% endif %}
-{% endblock %}
-{% block footer %}
-    <a href="{{url_for('index')}}">診断画面へ</a>
-    <a href="{{url_for('list')}}">本サイトについて</a>
-{% endblock %}
+
+</body>
+
+</html>
