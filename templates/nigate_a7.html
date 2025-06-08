@@ -5,10 +5,6 @@
     {% block title%}不安と緊張 大人の苦手対策教室{% endblock %}
 </head>
 <body>
-    {% block header %}
-        <a href="{{url_for('top')}}">大人の苦手対策教室</a>
-    {% endblock %}
-
     {% block content %}
     <nav aria-label="breadcrumb" class="breadcrumb">
         <ol>
@@ -87,8 +83,8 @@
         <div class="summary">
             <h5>まとめ</h5>
             <ul id="summary_list">
-                <li>・緊張は生き物として当然の反応</li>
-                <li>・ある程度の緊張はOK。緊張し過ぎないための対策は可能。</li>
+                <li>緊張は生き物として当然の反応</li>
+                <li>ある程度の緊張はOK。緊張し過ぎないための対策は可能。</li>
             </ul>
         </div>
         <div class="conversation">
@@ -100,20 +96,21 @@
             </div>
         </div>
     </article>
+    <section>
+        <div class="nigate_page_list">
+            <h2>その他おすすめの苦手対策</h2>
+            <ul>
+                <li><a href="{{url_for('nigate_a2')}}">置き忘れ</a></li>
+                <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
+                <li><a href="{{url_for('nigate_a5')}}">やるべきことを忘れる</a></li>
+                <li><a href="{{url_for('nigate_a7')}}">不安と緊張</a></li>
+            </ul>    
+        </div>
+    </section>
     {% endblock %}
 </body>
 
 {% block footer %}
-<div class="nigate_page_list">
-    <h2>その他おすすめの苦手対策</h2>
-    <ul>
-        <li><a href="{{url_for('nigate_a2')}}">置き忘れ</a></li>
-        <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
-        <li><a href="{{url_for('nigate_a4')}}">雑談</a></li>
-        <li><a href="{{url_for('nigate_a6')}}">単純作業を素早くこなす</a></li>
-    </ul>    
-</div>
-<br>
     <a href="{{url_for('top')}}">Top画面</a>
     <a href="{{url_for('purpose')}}">このサイトについて</a>
 {% endblock %}

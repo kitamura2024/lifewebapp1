@@ -6,7 +6,7 @@ body {
 
 a {
     text-decoration: none;
-    color: rgba(132, 89, 180, 0.7);
+    color: #3b3b3b;
 }
 
 .w_inner {
@@ -61,8 +61,7 @@ a {
     min-width: 200px;
     text-align: center;
     border-right: 1px solid #ddd;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 1px;
     position: relative;
 }
 
@@ -171,10 +170,27 @@ ul li ul li a:hover {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s, transform 0.2s;
 }
-
 .btn:hover {
     box-shadow: 4px 4px 8px #3b3b3b;
     transform: scale(1.05);
+}
+.btn-small{
+    background: #ffffff;
+    padding: 1px 10px;
+    border: 2px solid #3b3b3b;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #0000004d;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+.btn-small:hover {
+    box-shadow: 4px 4px 8px #3b3b3b;
+    transform: scale(1.05);
+}
+.btn-small::after{
+    content: "→";
+    margin-left: 5px;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 /*フッター*/
@@ -184,19 +200,19 @@ ul li ul li a:hover {
 
 .page_link {
     text-align: left;
+    margin-left: 50px;
 }
-
-.pp_link {
-    text-align: right;
+.page_link a{
+    margin-right: 10px;
 }
 
 .copy {
     text-align: center;
-    width: 120%;
+    width: 100%;
     background: #79a1b1;
     color: #fff;
     font-size: 12px;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 /*ニューリリース情報欄*/
@@ -233,7 +249,7 @@ ul li ul li a:hover {
     /* Flexboxで横並びにする */
     align-items: baseline;
     /* ベースラインで揃える（タイトルとリンクの文字の下端） */
-    margin: 10px 5px;
+    margin: 20px 5px;
     /* 各項目の間隔 */
 }
 
@@ -288,13 +304,6 @@ ul li ul li a:hover {
     border-radius: 5px;
     text-align: center;
     margin-top: 10px;
-}
-
-.author-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 20px;
 }
 
 .author-info h2 {
@@ -547,6 +556,7 @@ article .summary li {
 
 .answer-options {
     margin-bottom: 10px;
+    margin-left: 20px;
 }
 
 .answer-options label {
@@ -600,6 +610,46 @@ button[type="submit"]:hover {
     background-color: #1e88e5;
     transform: scale(1.05);
 }
+/*回答ゲージ*/
+.progress-container {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    height: 30px;
+}
+
+.progress-bar {
+    height: 30px;
+    background-color: #79a1b1;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    transition: width 0.4s ease;
+    border-radius: 5px 0 0 5px;
+    position: relative;
+    z-index: 1;
+}
+/* 区切り線のオーバーレイ */
+.progress-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+        to right,
+        transparent,
+        transparent calc(100% / 10 - 1px),
+        white calc(100% / 10 - 1px),
+        white calc(100% / 10)
+    );
+    z-index: 2;
+    pointer-events: none;
+}
 
 /* 診断結果の表示 */
 .result_comment {
@@ -644,6 +694,15 @@ button[type="submit"]:hover {
 }
 
 /*苦手対策ページ一覧*/
+.nigate_page_list {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
 .nigate_page_list h2 {
     font-size: 1.8em;
     font-weight: 600;
@@ -652,15 +711,6 @@ button[type="submit"]:hover {
     color: #4a4a8e;
     border-bottom: 2px solid #4a4a8e;
     padding-bottom: 5px;
-}
-
-.nigate_page_list {
-    max-width: 800px;
-    margin: 30px 20px;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
 }
 
 .nigate_page_list ul {
@@ -701,7 +751,7 @@ button[type="submit"]:hover {
 /*追加のメディアクエリ*/
 @media (max-width: 768px) {
     .w_inner {
-        width: 125%;
+        width: 100%;
         /*スマホの幅に揃える*/
     }
 
@@ -717,7 +767,7 @@ button[type="submit"]:hover {
 
     .header {
         min-width: 400px;
-        width: 125%;
+        width: 100%;
         /*スマホの幅にヘッダーを揃えるため*/
     }
 
@@ -755,21 +805,24 @@ button[type="submit"]:hover {
         width: 75%;
     }
 
+    .question_page .btn{
+        margin-left: 20px;
+    }
+
     .result_comment img {
         max-width: 30%;
         margin-left: 0;
         display: block;
         margin: 0 auto;
     }
+    .nigate_page_list{
+        max-width: 80%;
+        margin: 30px auto;
+    }
 
     .nigate_page_list ul {
         grid-template-columns: 1fr;
         /* 1列にする */
-    }
-
-    .question_page {
-        max-width: 75%;
-        margin-left: 5%;
     }
 
     article {
@@ -877,7 +930,7 @@ body {
         display: flex;
         position: absolute;
         top: 14px;
-        right: -75px;
+        right: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         /* 影をつけて立体感 */
         cursor: pointer;
@@ -949,6 +1002,12 @@ body {
         width: 10%;
         max-width: 200px;
     }
+    .author-box img {
+    max-width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
 }
 
 /*パンくずリスト*/

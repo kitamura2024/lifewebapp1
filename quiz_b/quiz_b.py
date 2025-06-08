@@ -157,14 +157,14 @@ def quiz_b():
         current_index = session["current_index"]
         question = questions[current_index]
         total_questions = len(questions)
-
-        return render_template("quiz_b/question_b.html", question=question, current_index=current_index, total_questions=total_questions)
-
-        
+        # プログレスの計算（％）
+        progress = int((session['current_index'] / total_questions) * 100)
+        return render_template("quiz_b/question_b.html", question=question, current_index=current_index, total_questions=total_questions,progress=progress)
 
     # GET処理
     current_index = session["current_index"]
     question = questions[current_index]
     total_questions = len(questions)
+    progress = int((session['current_index'] / total_questions) * 100)
 
-    return render_template("quiz_b/question_b.html", question=question, current_index=current_index, total_questions=total_questions)
+    return render_template("quiz_b/question_b.html", question=question, current_index=current_index, total_questions=total_questions,progress=progress)

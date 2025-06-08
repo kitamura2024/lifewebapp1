@@ -7,36 +7,26 @@ question_a.htmlにrender_template関数を使って変数を送信し、
 from flask import Blueprint, render_template, request, session, redirect, url_for
 import random
 
-#Blueprintを定義
+#Blueprintを定義(診断機能)
 quiz_bp_a = Blueprint('quiz_a', __name__, template_folder='../templates')
 #初期化ルート
 @quiz_bp_a.route("/quiz_a/init", methods=["GET"])
 def quiz_init():
-    # セッションのクリアと初期化
+    # セッションのクリアと初期化（セッション：一時的な保存）
     session.clear()
     session["current_index"] = 0
     session["scores"] = {
-        "multitask": 0,
-        "creativity": 0,
-        "forgetAction": 0,
-        "forgetItem": 0,
-        "planning": 0,
-        "time": 0,
-        "anxiety": 0,
-        "careless": 0
+        "multitask": 0,#マルチタスクが苦手
+        "creativity": 0,#新しいことに取り組む、問題解決方法を自ら見つける、発想力（料理を考える）、収納や整理整頓
+        "forgetAction": 0,#やるべきことをよく忘れる、聞いたことを忘れる
+        "forgetItem": 0,#物をよく忘れる
+        "planning": 0,#プランニング（行動の計画を立てること、優先順位）、片付けをやり始める、締め切り苦手
+        "time": 0,#時間の管理が苦手
+        "anxiety": 0,#不安になりやすい
+        "careless": 0#集中力が続かない、単純作業が苦手
     }
-    # クイズメインページにリダイレクト
+    #初期化後、最初の質問ページへリダイレクト
     return redirect(url_for("quiz_a.quiz"))
-
-#初期化
-multitask = 0 #マルチタスクが苦手
-creativity = 0 #新しいことに取り組む、問題解決方法を自ら見つける、発想力（料理を考える）、収納や整理整頓
-forgetAction = 0 #やるべきことをよく忘れる、聞いたことを忘れる
-forgetItem = 0 #物をよく忘れる
-planning = 0 #プランニング（行動の計画を立てること、優先順位）、片付けをやり始める、締め切り苦手
-time = 0 #時間の管理が苦手
-anxiety =0 #不安になりやすい
-careless =0 #集中力が続かない、単純作業が苦手
 
 def add_point(x):
     return x + 1
@@ -149,7 +139,7 @@ def quiz():
     current_index = session["current_index"]
     scores = session["scores"]
 
-#回答を受け取る
+    #回答を受け取る>該当項目にポイント加算
     if request.method == "POST":
         answer = int(request.form.get("answer"))
         q = questions[current_index]
@@ -187,7 +177,7 @@ def quiz():
         
         #最終問題の回答が出たら、結果を表示
         if session["current_index"] >= len(questions):
-            result = judge(**scores)
+            result = judge(**scores)#scores辞書のスコアをそれぞれキーワード引数として渡す
             session.clear()
             #comment、urlの変数を結果を表示するurlに送る
             return render_template("quiz_a/result_a.html", comment=result["comment"], url=result["url"], 
@@ -196,12 +186,14 @@ def quiz():
         current_index = session["current_index"]
         question = questions[current_index]
         total_questions = len(questions)
-        
-        return render_template("quiz_a/question_a.html", question=question, current_index=current_index, total_questions=total_questions)
+        # プログレスの計算（％）
+        progress = int((session['current_index'] / total_questions) * 100)
+        return render_template("quiz_a/question_a.html", question=question, current_index=current_index, total_questions=total_questions,progress=progress)
 
     # GET処理
     current_index = session["current_index"]
     question = questions[current_index]
     total_questions = len(questions)
+    progress = int((session['current_index'] / total_questions) * 100)
 
-    return render_template("quiz_a/question_a.html", question=question, current_index=current_index, total_questions=total_questions)
+    return render_template("quiz_a/question_a.html", question=question, current_index=current_index, total_questions=total_questions,progress=progress)

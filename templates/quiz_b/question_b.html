@@ -27,7 +27,10 @@
     <main class="container w_inner">
         <div class="question_page">
             <div class="explanation">
-                <p>質問 {{ current_index + 1 }} / {{ total_questions }}</p>
+                <div class="progress-container">
+                    <div class="progress-bar"style="width: {{ progress }}%;"></div>
+                </div>
+                <p>問 {{ current_index + 1 }}</p>
                 <p>{{ question.question }}</p>
             </div>
 
@@ -50,7 +53,7 @@
         </div>
     </main>
     <div class="footer">
-        <div class="page_link w_inner">
+        <div class="page_link">
             <a href="{{url_for('top')}}">TOPに戻る</a>
             <a href="{{url_for('purpose')}}">本サイトについて</a>
         </div>

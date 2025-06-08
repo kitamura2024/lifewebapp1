@@ -5,9 +5,6 @@
     {% block title%}大人の苦手対策教室{% endblock %}
 </head>
 <body>
-    {% block header %}
-    <a href="{{url_for('top')}}">大人の苦手対策教室</a>
-    {% endblock %}
     {% block content %}
     <nav aria-label="breadcrumb" class="breadcrumb">
         <ol>
@@ -86,20 +83,21 @@
             </ul>
         </div>
     </article>
+    <section>
+        <div class="nigate_page_list">
+            <h2>その他おすすめの苦手対策</h2>
+            <ul>
+                <li><a href="{{url_for('nigate_a2')}}">置き忘れ</a></li>
+                <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
+                <li><a href="{{url_for('nigate_a5')}}">やるべきことを忘れる</a></li>
+                <li><a href="{{url_for('nigate_a7')}}">不安と緊張</a></li>
+            </ul>    
+        </div>
+    </section>
     {% endblock %}
 </body>
 
 {% block footer %}
-<div class="nigate_page_list">
-    <h2>その他おすすめの苦手対策</h2>
-    <ul>
-        <li><a href="{{url_for('nigate_a2')}}">置き忘れ</a></li>
-        <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
-        <li><a href="{{url_for('nigate_a4')}}">雑談</a></li>
-        <li><a href="{{url_for('nigate_a7')}}">不安と緊張</a></li>
-    </ul>    
-</div>
-<br>
     <a href="{{url_for('top')}}">Top画面</a>
     <a href="{{url_for('purpose')}}">このサイトについて</a>
 {% endblock %}
