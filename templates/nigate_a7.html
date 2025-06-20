@@ -4,113 +4,117 @@
     <meta charset="UTF-8">
     {% block title%}不安と緊張 大人の苦手対策教室{% endblock %}
 </head>
+
 <body>
     {% block content %}
-    <nav aria-label="breadcrumb" class="breadcrumb">
-        <ol>
-            <li><a href="{{ url_for('top') }}">ホーム</a></li>
-            <li><a href="{{ url_for('nigate_list') }}">苦手対策一覧</a></li>
-            <li aria-current="page">不安と緊張</li>
-        </ol>
-    </nav>
+    <div class="blog_container">
+        <nav aria-label="breadcrumb" class="breadcrumb">
+            <ol>
+                <li><a href="{{ url_for('top') }}">ホーム</a></li>
+                <li><a href="{{ url_for('nigate_list') }}">苦手対策一覧</a></li>
+                <li aria-current="page">不安と緊張</li>
+            </ol>
+        </nav>
 
-    <article>
-        <div class="blog_img">
-            <img src="{{url_for('static', filename='img/todo.jpg')}}" alt="会話">
-        </div>
-        <h2>大人の苦手対策教室：“不安と緊張”</h2>
-        <div class="article_meta">
-            <span class="category"><a href="{{url_for('nigate_a2')}}">コミュニケーション</a></span>
-            <time class="datetime_check" datetime="2025-04-20" aria-label="更新日">2025年4月20日</time>
-        </div>
-        <div class="conversation">
-            <div class="speaker speaker-right">
-                <div class="bubble bubble-right">
-                    <p>あー、明日の会議が怖い！明日の会議で僕が発表するんだけど、緊張して怖いよ。</p>
-                </div>
-                <img src="{{url_for('static', filename='img/kepu.png')}}" alt="ケープ">
+        <article>
+            <div class="blog_img">
+                <img src="{{url_for('static', filename='img/todo.jpg')}}" alt="会話">
             </div>
-            <div class="speaker speaker-left">
-                <img src="{{url_for('static', filename='img/humstar_uun.png')}}" alt="ジャンガリ">
-                <div class="bubble bubble-left">
-                    <p>それは緊張しますねえ。いくつか緊張をほぐす方法があるから一緒にやってみましょう！
+            <!--title-->
+            <h1>大人の苦手対策教室：“不安と緊張”</h1>
+            <div class="article_meta">
+                <span class="category"><a href="{{url_for('nigate_a2')}}">コミュニケーション</a></span>
+                <time class="datetime_check" datetime="2025-04-20" aria-label="更新日">2025年4月20日</time>
+            </div>
+            <div class="conversation">
+                <div class="speaker speaker-right">
+                    <div class="bubble bubble-right">
+                        <p>あー、明日の会議が怖い！明日の会議で僕が発表するんだけど、緊張して怖いよ。</p>
+                    </div>
+                    <img src="{{url_for('static', filename='img/kepu.png')}}" alt="ケープ">
+                </div>
+                <div class="speaker speaker-left">
+                    <img src="{{url_for('static', filename='img/humstar_uun.png')}}" alt="ジャンガリ">
+                    <div class="bubble bubble-left">
+                        <p>それは緊張しますねえ。いくつか緊張をほぐす方法があるから一緒にやってみましょう！
                         </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <section>
-            <p>人前に立つときやいつもと違うことをするときには不安になったり、緊張したりしますよね。
-            ある程度の緊張はパフォーマンスを高める上では必要です。
-            ただ、緊張感が高すぎると、自分の力を発揮できなかったり、嫌な思いをしてしまったりしますから、
-            そういうときには緩めることも大切です。</p>
+            <section>
+                <p>人前に立つときやいつもと違うことをするときには不安になったり、緊張したりしますよね。
+                    ある程度の緊張はパフォーマンスを高める上では必要です。
+                    ただ、緊張感が高すぎると、自分の力を発揮できなかったり、嫌な思いをしてしまったりしますから、
+                    そういうときには緩めることも大切です。</p>
 
-            <h3>戦うか逃げるか、「闘争か逃走反応」とは</h3>
-            <p>私たちが緊張したりプレッシャーを感じたりするとき、実は体の中では“サバイバルモード”が作動しています。これを「闘争か逃走反応（Fight or Flight Response）」と呼びます。
-                これは、太古の昔、人間が危険な動物に遭遇したときに生き延びるために備わった反応です。「戦うか、逃げるか」――この2択に備えて、体が自動的に準備を始めるのです。
-                たとえば…
+                <h2>戦うか逃げるか、「闘争か逃走反応」とは</h2>
+                <p>私たちが緊張したりプレッシャーを感じたりするとき、実は体の中では“サバイバルモード”が作動しています。これを「闘争か逃走反応（Fight or Flight Response）」と呼びます。
+                    これは、太古の昔、人間が危険な動物に遭遇したときに生き延びるために備わった反応です。「戦うか、逃げるか」――この2択に備えて、体が自動的に準備を始めるのです。
+                    たとえば…
                 </p>
-            <ul>
-                <li>• 心臓がドキドキ速くなるのは、全身に酸素を送るため。</li>
-                <li>• 手に汗をかくのは、体温調節を助けるため。</li>
-                <li>• 身体の反応に意識が集中する。（頭が真っ白になることも）</li>
-            </ul>
-            <p>  つまり、緊張しているときの体の反応は、すべて「自分を守ろう」としてくれている証拠。だからこそ、
-                「自分はおかしくなってる」と思わず、「ああ、体が全力で助けてくれてるんだな」と捉えることが、
-                緊張とうまく付き合う第一歩になります。</p>
-        </section>
-        <section>
-            <h3>緊張や不安への対策</h3>
-            <h4>（１）リラックス法</h4>
-            <p>呼吸法などのリラックス法は身体と心の緊張を和らげてくれます。</p>
-            <p>リラックス法については下記のページで紹介しています。</p>
-            <a href="{{url_for('nigate_relax')}}">　　→リラックス法について</a>
-            <h4>（２）エクスポージャー（暴露法）</h4>
-            <p>エクスポージャー（暴露法）は不安や緊張が高まることに対して避けるのではなく、挑戦していくことで慣れていく方法のことです。
-                例：「人前で発表するのが苦手」(1) ひとりで発表の練習をする。(2) ひとりで録音しながら発表の練習をする。(3) 家族や友人ひとりの前で発表する。(4) 少人数の前で発表する。
-                このように少しずつステップアップすることで、身体も心も「これは大丈夫だ」と思えるようになります。いきなり一番不安なことに挑戦する方法もありますが、基本的には簡単なものから少しずつステップアップすることが大切です。
+                <ul>
+                    <li>• 心臓がドキドキ速くなるのは、全身に酸素を送るため。</li>
+                    <li>• 手に汗をかくのは、体温調節を助けるため。</li>
+                    <li>• 身体の反応に意識が集中する。（頭が真っ白になることも）</li>
+                </ul>
+                <p> つまり、緊張しているときの体の反応は、すべて「自分を守ろう」としてくれている証拠。だからこそ、
+                    「自分はおかしくなってる」と思わず、「ああ、体が全力で助けてくれてるんだな」と捉えることが、
+                    緊張とうまく付き合う第一歩になります。</p>
+            </section>
+            <section>
+                <h2>緊張や不安への対策</h2>
+                <h3>（１）リラックス法</h3>
+                <p>呼吸法などのリラックス法は身体と心の緊張を和らげてくれます。</p>
+                <p>リラックス法については下記のページで紹介しています。</p>
+                <a href="{{url_for('nigate_relax')}}">　　→リラックス法について</a>
+                <h3>（２）エクスポージャー（暴露法）</h3>
+                <p>エクスポージャー（暴露法）は不安や緊張が高まることに対して避けるのではなく、挑戦していくことで慣れていく方法のことです。
+                    例：「人前で発表するのが苦手」(1) ひとりで発表の練習をする。(2) ひとりで録音しながら発表の練習をする。(3) 家族や友人ひとりの前で発表する。(4) 少人数の前で発表する。
+                    このように少しずつステップアップすることで、身体も心も「これは大丈夫だ」と思えるようになります。いきなり一番不安なことに挑戦する方法もありますが、基本的には簡単なものから少しずつステップアップすることが大切です。
                 </p>
-            <h4>（３）リフレーミング</h4>
-            <p>「リフレーミング」はものの見方を変えて、気持ちを軽くする方法です。</p>
-            <p>例：「仕事で失敗したらどうしよう」という不安に対して見方を変えると、</p>
-            <ul>
-                <li>・失敗してもそれは慣れるためのチャンスだ</li>
-                <li>・他の人も失敗している</li>
-                <li>・うまくできなくても、やれることはやっている</li>
-            </ul>
-            <p>このように、同じできことでも見方を変えることで不安や緊張をやわらげることができます。多くの物事は複数の見方ができるものです。
-                リフレーミングによって客観的に見ることができるので、新しい発想にも繋がる、という効果も期待できます。</p>
-        </section>    
-        <div class="summary">
-            <h5>まとめ</h5>
-            <ul id="summary_list">
-                <li>緊張は生き物として当然の反応</li>
-                <li>ある程度の緊張はOK。緊張し過ぎないための対策は可能。</li>
-            </ul>
-        </div>
-        <div class="conversation">
-            <div class="speaker speaker-left">
-                <img src="{{url_for('static', filename='img/humstar_nomal.png')}}" alt="ジャンガリ">
-                <div class="bubble bubble-left">
-                    <p>緊張や不安は０にはできないよ。上手に付き合っていく方法を探っていきましょう。 </p>
+                <h3>（３）リフレーミング</h3>
+                <p>「リフレーミング」はものの見方を変えて、気持ちを軽くする方法です。</p>
+                <p>例：「仕事で失敗したらどうしよう」という不安に対して見方を変えると、</p>
+                <ul>
+                    <li>・失敗してもそれは慣れるためのチャンスだ</li>
+                    <li>・他の人も失敗している</li>
+                    <li>・うまくできなくても、やれることはやっている</li>
+                </ul>
+                <p>このように、同じできことでも見方を変えることで不安や緊張をやわらげることができます。多くの物事は複数の見方ができるものです。
+                    リフレーミングによって客観的に見ることができるので、新しい発想にも繋がる、という効果も期待できます。</p>
+            </section>
+            <div class="summary">
+                <h4>まとめ</h4>
+                <ul id="summary_list">
+                    <li>緊張は生き物として当然の反応</li>
+                    <li>ある程度の緊張はOK。緊張し過ぎないための対策は可能。</li>
+                </ul>
+            </div>
+            <div class="conversation">
+                <div class="speaker speaker-left">
+                    <img src="{{url_for('static', filename='img/humstar_nomal.png')}}" alt="ジャンガリ">
+                    <div class="bubble bubble-left">
+                        <p>緊張や不安は０にはできないよ。上手に付き合っていく方法を探っていきましょう。 </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </article>
-    <section>
-        <div class="nigate_page_list">
-            <h2>その他おすすめの苦手対策</h2>
-            <ul>
-                <li><a href="{{url_for('nigate_a2')}}">置き忘れ</a></li>
-                <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
-                <li><a href="{{url_for('nigate_a5')}}">やるべきことを忘れる</a></li>
-                <li><a href="{{url_for('nigate_a7')}}">不安と緊張</a></li>
-            </ul>    
-        </div>
-    </section>
+        </article>
+        <section>
+            <div class="nigate_page_list">
+                <h4>その他おすすめの苦手対策</h4>
+                <ul>
+                    <li><a href="{{url_for('nigate_a2')}}">置き忘れ</a></li>
+                    <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
+                    <li><a href="{{url_for('nigate_a5')}}">やるべきことを忘れる</a></li>
+                    <li><a href="{{url_for('nigate_a7')}}">不安と緊張</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
     {% endblock %}
 </body>
 
 {% block footer %}
-    <a href="{{url_for('top')}}">Top画面</a>
-    <a href="{{url_for('purpose')}}">このサイトについて</a>
+<a href="{{url_for('top')}}">Top画面</a>
+<a href="{{url_for('purpose')}}">このサイトについて</a>
 {% endblock %}

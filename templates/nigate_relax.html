@@ -4,60 +4,63 @@
     <meta charset="UTF-8">
     {% block title%}大人の苦手対策教室{% endblock %}
 </head>
+
 <body>
     {% block content %}
-    <article>
-        <div class="blog_img">
-            <img src="{{url_for('static', filename='img/todo.jpg')}}" alt="会話">
-        </div>
-        <h2>大人の苦手対策教室：“不安と緊張”</h2>
-        <dev class="article_type">
-            <dev class="category" href="{{url_for('nigate_a2')}}">リラックス法</dev>
-            <time class="datetime_check" datetime="2025-04-09" aria-label="更新日">2025年4月19日</time>
-        </dev>
-        <div class="conversation">
-            
-            <div class="speaker speaker-left">
-                <img src="{{url_for('static', filename='img/humstar_nomal.png')}}" alt="ジャンガリ">
-                <div class="bubble bubble-left">
-                    <p>ここではリラックス法をいくつか紹介します。いろいろ試してみてね。 </p>
+    <div class="blog_container">
+        <article>
+            <div class="blog_img">
+                <img src="{{url_for('static', filename='img/todo.jpg')}}" alt="会話">
+            </div>
+            <h1>大人の苦手対策教室：『リラックス法』</h1>
+            <dev class="article_type">
+                <dev class="category" href="{{url_for('nigate_a2')}}">リラックス法</dev>
+                <time class="datetime_check" datetime="2025-04-09" aria-label="更新日">2025年4月19日</time>
+            </dev>
+            <div class="conversation">
+
+                <div class="speaker speaker-left">
+                    <img src="{{url_for('static', filename='img/humstar_nomal.png')}}" alt="ジャンガリ">
+                    <div class="bubble bubble-left">
+                        <p>ここではリラックス法をいくつか紹介します。いろいろ試してみてね。 </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <h3>肩のリラックス法</h3>
-        <img src="{{url_for('static', filename='img/relax_kata.jpg')}}" alt="リラックス法">
-        
-        <h3>深呼吸を使った使ったリラックス法</h3>
-        <img src="{{url_for('static', filename='img/relax_kokyu.jpg')}}" alt="リラックス法">
 
-        <h3>音楽＋手足ぶらぶら</h3>
-        <p>好きな音楽や心地の良い音を聞きながら手足をぶらぶらさせます。手足の力がほぐれてリラックスに繋がります。</p>
+            <h2>肩のリラックス法</h2>
+            <img src="{{url_for('static', filename='img/relax_kata.jpg')}}" alt="リラックス法">
 
-        <div class="conversation">
-            <div class="speaker speaker-left">
-                <img src="{{url_for('static', filename='img/humstar_nomal.png')}}" alt="ジャンガリ">
-                <div class="bubble bubble-left">
-                    <p>忙しいときは、ただ深呼吸をするだけでも効果があるよ。時間があるときに上の3つも試してみてね。 </p>
+            <h2>深呼吸を使った使ったリラックス法</h2>
+            <img src="{{url_for('static', filename='img/relax_kokyu.jpg')}}" alt="リラックス法">
+
+            <h2>音楽＋手足ぶらぶら</h2>
+            <p>好きな音楽や心地の良い音を聞きながら手足をぶらぶらさせます。手足の力がほぐれてリラックスに繋がります。</p>
+
+            <div class="conversation">
+                <div class="speaker speaker-left">
+                    <img src="{{url_for('static', filename='img/humstar_nomal.png')}}" alt="ジャンガリ">
+                    <div class="bubble bubble-left">
+                        <p>忙しいときは、ただ深呼吸をするだけでも効果があるよ。時間があるときに上の3つも試してみてね。 </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </article>
-    <section>
-        <div class="nigate_page_list">
-            <h2>その他おすすめの苦手対策</h2>
-            <ul>
-                <li><a href="{{url_for('nigate_a2')}}">置き忘れ</a></li>
-                <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
-                <li><a href="{{url_for('nigate_a5')}}">やるべきことを忘れる</a></li>
-                <li><a href="{{url_for('nigate_a7')}}">不安と緊張</a></li>
-            </ul>    
-        </div>
-    </section>
+        </article>
+        <section>
+            <div class="nigate_page_list">
+                <h2>その他おすすめの苦手対策</h2>
+                <ul>
+                    <li><a href="{{url_for('nigate_a2')}}">置き忘れ</a></li>
+                    <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
+                    <li><a href="{{url_for('nigate_a5')}}">やるべきことを忘れる</a></li>
+                    <li><a href="{{url_for('nigate_a7')}}">不安と緊張</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
     {% endblock %}
 </body>
 
 {% block footer %}
-    <a href="{{url_for('top')}}">Top画面</a>
-    <a href="{{url_for('purpose')}}">このサイトについて</a>
+<a href="{{url_for('top')}}">Top画面</a>
+<a href="{{url_for('purpose')}}">このサイトについて</a>
 {% endblock %}

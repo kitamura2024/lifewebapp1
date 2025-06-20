@@ -1,7 +1,7 @@
 body {
     font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
         'Meiryo', sans-serif;
-    font-size: 25px;
+    font-size: 23px;
 }
 
 a {
@@ -13,6 +13,10 @@ a {
     max-width: 1200px;
     width: 80%;
     margin: 0 auto;
+}
+
+.spacer {
+  height: 20px;
 }
 
 /*ヘッダー*/
@@ -324,15 +328,19 @@ ul li ul li a:hover {
 }
 
 /* 記事 */
+.blog_container{
+    width: 90%;
+    margin: 0 auto;
+}
 article {
     font-family: Arial, sans-serif;
     margin-top: 20px;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 article p {
-    margin-bottom: 20px;
-    text-indent: 1em;
+    margin-bottom: 1.6em;
+    letter-spacing: 2px;
 }
 
 h1 {
@@ -346,6 +354,10 @@ h2 {
     color: #555;
     font-size: 27px;
     font-weight: bold;
+    background: #f5f4f2;
+    border-left: solid 4px #006633;
+    margin:35px 0 20px;
+    padding: 10px 12px;
 }
 
 h3 {
@@ -353,16 +365,27 @@ h3 {
     padding-bottom: 5px;
     color: #2c3e50;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    margin-bottom: 5px;
+    margin:15px 0;
 }
 
 h4 {
-    background-color: #fffbf0;
     padding: 10px;
     color: #2c3e50;
     border-radius: 5px;
 }
-
+.article_type {
+    display: flex;
+}
+.datetime_check {
+    background-image: url('../img/clock_blog.png');
+    background-repeat: no-repeat;
+    background-position: left center; 
+    background-size: 21px 21px;
+    padding-left: 22px; 
+    margin-left: 1em;
+    line-height: 1.8; 
+    display: inline-block;
+}
 .article_meta {
     font-size: 18px;
     text-align: left;
@@ -388,13 +411,13 @@ article ul {
     padding: 20px;
     border-radius: 10px;
     /* 角を丸くする */
-    margin: 20px;
+    margin: 30px 20px 25px 20px;
     /* 周りの余白 */
     box-shadow: 5px 5px 10px #111;
     /* 全体的な影 */
 }
 
-.summary h5 {
+.summary h4 {
     color: #f0f0f0;
     /* チョークのような色 */
     font-family: 'Segoe Script', cursive;
@@ -436,13 +459,17 @@ article .summary li {
 .conversation {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 5px;
+    margin: 6% 0;
+}
+.conversation p{
+    margin-bottom: 0;
 }
 
 .speaker {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .speaker-left {
@@ -456,8 +483,8 @@ article .summary li {
 }
 
 .speaker img {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     margin-right: 10px;
 }
@@ -669,6 +696,7 @@ button[type="submit"]:hover {
     margin-bottom: 20px;
     border-bottom: 2px solid #4a4a8e;
     padding-bottom: 5px;
+    border-left: none;
 }
 
 .result_comment img {
@@ -1016,7 +1044,7 @@ body {
     list-style: none;
     padding: 0;
     font-size: 0.9em;
-    margin-top: 0.2em;
+    margin-top: 0.5em
 }
 
 .breadcrumb li+li::before {

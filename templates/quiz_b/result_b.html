@@ -2,13 +2,13 @@
 
 {% block content %}
 <div class="result_comment">
-    <h2>診断結果<img src="{{url_for('static', filename='img/result.png')}}" alt="画像"></h2>
+    <h3>診断結果<img src="{{url_for('static', filename='img/result.png')}}" alt="画像"></h3>
     <p>{{ comment }}</p>
     <br>
     <p>【あなたにおすすめの記事】<a href="{{ url }}">{{ blog_title }}🔗</a></p>
 </div>
 <div class="nigate_page_list">
-    <h2>苦手対策ページ一覧</h2>
+    <h4>苦手対策ページ一覧</h4>
     <ul>
         <li><a href="{{url_for('nigate_a2')}}">置き忘れ</a></li>
         <li><a href="{{url_for('nigate_a3')}}">遅刻</a></li>
